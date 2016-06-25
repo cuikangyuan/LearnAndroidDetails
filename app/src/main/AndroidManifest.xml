@@ -16,12 +16,22 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".MyService">
+        <service
+            android:enabled="true"
+            android:exported="true"
+            android:name=".MyService"></service>
+        <service
+            android:enabled="true"
+            android:exported="true"
+            android:name=".MyIntentService"></service>
+        <service
+            android:name=".LongRunningService"
+            android:enabled="true"
+            android:exported="true"></service>
 
-        </service>
-        <service android:name=".MyIntentService">
+        <receiver android:name=".AlarmReceiver">
 
-        </service>
+        </receiver>
     </application>
 
 </manifest>

@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startService(bindIntent);
         */
         //unbindService(mConnection);//解绑服务
+
+        /*
+        * 后台计时服务
+        * */
+        Intent i = new Intent(this, LongRunningService.class);
+        startService(i);
     }
 
     @Override
