@@ -14,4 +14,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start service"
+        android:id="@+id/btnStartService"
+        android:layout_below="@+id/tvTest"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="60dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start intentService"
+        android:id="@+id/btnStartIntentService"
+        android:layout_alignTop="@+id/btnStartService"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

@@ -33,4 +33,35 @@ public class MyService extends Service {
             return 0;
         }
     }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.d(TAG, "onCreate executed");
+/*
+        前台服务
+        Notification notification = new Notification(
+                R.mipmap.ic_launcher,
+                "Notification comes",
+                System.currentTimeMillis());
+
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+        //notification.setLatestEventInfo
+        startForeground(1, notification);
+*/
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(TAG, "onStartCommand executed");
+        return super.onStartCommand(intent, flags, startId);
+
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d(TAG, "onDestroy executed");
+        super.onDestroy();
+    }
 }
