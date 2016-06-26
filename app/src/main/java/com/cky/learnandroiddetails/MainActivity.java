@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvTest;
     Button btnStartService;
     Button btnStartIntentService;
+    Button btnCountService;
 
     private MyService.DownloadBinder mDownloadBinder;
 
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvTest = (TextView) findViewById(R.id.tvTest);
         btnStartService = (Button) findViewById(R.id.btnStartService);
         btnStartIntentService = (Button)findViewById(R.id.btnStartIntentService);
+        btnCountService = (Button)findViewById(R.id.btnStartCountService);
         /*
         * 1.子线程 更新 UI 控件
         * */
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnStartService.setOnClickListener(this);
         btnStartIntentService.setOnClickListener(this);
+        btnCountService.setOnClickListener(this);
         /*
         * 2.活动 和 服务绑定
         *
@@ -68,9 +71,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         /*
         * 后台计时服务
-        * */
+        *
         Intent i = new Intent(this, LongRunningService.class);
         startService(i);
+        */
+        /*
+        Intent i = new Intent(this, MyService.class);
+        startService(i);
+        */
     }
 
     @Override
@@ -97,6 +105,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(TAG, "Thread id is " + Thread.currentThread().getId());
                 Intent intentService = new Intent(MainActivity.this, MyIntentService.class);
                 startService(intentService);
+                break;
+            case R.id.btnStartCountService:
+                Log.d(TAG, "btnStartCountService executed");
+                Intent intentCountService = new Intent(MainActivity.this, LongRunningService.class);
+                startService(intentCountService);
                 break;
         }
 

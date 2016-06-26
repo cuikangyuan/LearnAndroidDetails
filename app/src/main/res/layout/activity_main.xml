@@ -31,4 +31,14 @@
         android:id="@+id/btnStartIntentService"
         android:layout_alignTop="@+id/btnStartService"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启计时服务"
+        android:id="@+id/btnStartCountService"
+        android:layout_below="@+id/btnStartService"
+        android:layout_alignParentStart="true" />
+
+
 </RelativeLayout>
