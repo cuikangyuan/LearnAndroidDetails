@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }).start();
 
+        //打印当前线程id
+        Log.d(TAG, "MainActivity Thread id is " + Thread.currentThread().getId());
+
         btnStartService.setOnClickListener(this);
         btnStartIntentService.setOnClickListener(this);
         btnCountService.setOnClickListener(this);

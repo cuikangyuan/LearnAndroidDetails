@@ -14,6 +14,20 @@ public class LongRunningService extends Service {
 
     private static final String TAG = LongRunningService.class.getSimpleName();
 
+
+    @Override
+    public void onCreate() {
+        /*
+        service 运行在主线程中
+
+        因此 service 执行耗时任务依旧会ANR 但我们可以在service中创建子线程 在子线程中
+        执行耗时逻辑
+        * */
+        Log.d(TAG, "LongRunningService Thread id is " + Thread.currentThread().getId());
+        super.onCreate();
+    }
+
+
     public LongRunningService() {
     }
 
