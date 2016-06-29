@@ -17,21 +17,25 @@
         </activity>
 
         <service
+            android:name=".MyService"
             android:enabled="true"
-            android:exported="true"
-            android:name=".MyService"></service>
+            android:exported="true" />
         <service
+            android:name=".MyIntentService"
             android:enabled="true"
-            android:exported="true"
-            android:name=".MyIntentService"></service>
+            android:exported="true" />
         <service
             android:name=".LongRunningService"
             android:enabled="true"
+            android:exported="true" />
+
+        <receiver android:name=".AlarmReceiver"></receiver>
+
+        <service
+            android:name=".RemoteService"
+            android:process=":remote"
+            android:enabled="true"
             android:exported="true"></service>
-
-        <receiver android:name=".AlarmReceiver">
-
-        </receiver>
     </application>
 
 </manifest>

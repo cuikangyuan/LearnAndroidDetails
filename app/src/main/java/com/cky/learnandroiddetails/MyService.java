@@ -44,6 +44,15 @@ public class MyService extends Service {
         Log.d(TAG, "onCreate executed");
 
         /*
+        //造成 ANR
+        try {
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        */
+
+        /*
         //前台服务
         Notification notification = new Notification(
                 R.mipmap.ic_launcher,

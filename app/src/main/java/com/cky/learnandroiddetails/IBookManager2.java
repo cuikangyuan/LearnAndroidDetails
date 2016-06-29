@@ -8,6 +8,10 @@ import android.os.IInterface;
  * 手动 创建 Binder
  *
  * 1.声明一个AIDL性质的接口
+ *
+ * AIDL -> android 接口定义语言
+ *
+ * 用于让service与多个应用程序组件之间进行跨进程通信 从而实现多个应用程序共享一个 服务的功能
  */
 public interface IBookManager2 extends IInterface {
 

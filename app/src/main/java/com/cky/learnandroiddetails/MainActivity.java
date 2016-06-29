@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,8 +18,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnStartService;
     Button btnStartIntentService;
     Button btnCountService;
+    Button btnRemoteService;
 
     private MyService.DownloadBinder mDownloadBinder;
+
+    private MyAIDLService myAIDLService;
+
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -36,6 +41,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     };
 
+    private ServiceConnection mAIDLServiceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            myAIDLService = MyAIDLService.Stub.asInterface(service);
+
+            try {
+                int result = myAIDLService.plus(1, 2);
+                String upperStr = myAIDLService.toUpperCase("hello world");
+
+                Log.d(TAG, "result is " + result);
+                Log.d(TAG, "upperStr is " + upperStr);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnStartService = (Button) findViewById(R.id.btnStartService);
         btnStartIntentService = (Button)findViewById(R.id.btnStartIntentService);
         btnCountService = (Button)findViewById(R.id.btnStartCountService);
+        btnRemoteService = (Button)findViewById(R.id.btnStartRemoteService);
         /*
         * 1.子线程 更新 UI 控件
         * */
@@ -61,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnStartService.setOnClickListener(this);
         btnStartIntentService.setOnClickListener(this);
         btnCountService.setOnClickListener(this);
+        btnRemoteService.setOnClickListener(this);
         /*
         * 2.活动 和 服务绑定
         *
@@ -130,6 +160,8 @@ function zhuan(){
         */
     }
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -160,6 +192,13 @@ function zhuan(){
                 Intent intentCountService = new Intent(MainActivity.this, LongRunningService.class);
                 startService(intentCountService);
                 break;
+            case R.id.btnStartRemoteService:
+                Log.d(TAG, "btnStartRemoteService executed");
+                Intent intentRemoteService = new Intent(MainActivity.this, RemoteService.class);
+                //startService(intentRemoteService);
+                bindService(intentRemoteService, mAIDLServiceConnection, BIND_AUTO_CREATE);
+                break;
+
         }
 
 
