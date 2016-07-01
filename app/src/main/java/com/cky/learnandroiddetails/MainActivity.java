@@ -69,6 +69,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //LayoutInflater layoutInflater = LayoutInflater.from(this);
+        //LayoutInflater layoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //layoutInflater.inflate(resourceId, root);
+
+
         tvTest = (TextView) findViewById(R.id.tvTest);
         btnStartService = (Button) findViewById(R.id.btnStartService);
         btnStartIntentService = (Button)findViewById(R.id.btnStartIntentService);
@@ -158,6 +163,8 @@ function zhuan(){
             e.printStackTrace();
         }
         */
+
+
     }
 
 
