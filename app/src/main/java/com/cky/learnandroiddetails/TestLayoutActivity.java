@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class TestLayoutActivity extends AppCompatActivity {
 
     /*
@@ -47,5 +50,26 @@ public class TestLayoutActivity extends AppCompatActivity {
         ViewParent viewParent = mainLayout.getParent();
         Log.d(TAG, "The parent of mainLayout is " + viewParent);
         */
+
+        /*
+        String s1 = "nihao";
+        String s2 = "nihao";
+        String s3 = new String("nihao");
+        //==  比较两对象在jvm中的地址
+        Log.d(TAG, String.valueOf(s1 == s2)); //true s1 s2 都是字符串字面值的引用
+        Log.d(TAG, String.valueOf(s1 == s3)); //false
+        */
+
+        Employee e1 = new Employee();
+        Employee e2 = new Employee();
+        e1.setId(100);
+        e2.setId(100);
+        //Log.d(TAG, String.valueOf(e1.equals(e2))); //false
+        //如果employee对象 equal返回 true set 应该只存储一个对象
+        Set<Employee> employees = new HashSet<Employee>();
+        employees.add(e1);
+        employees.add(e2);
+        System.out.println("employees-->" + employees);
+
     }
 }
