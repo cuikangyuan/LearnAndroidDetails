@@ -71,5 +71,17 @@ public class TestLayoutActivity extends AppCompatActivity {
         employees.add(e2);
         System.out.println("employees-->" + employees);
 
+        /*
+        http://my.oschina.net/hanzhankang/blog/195529
+
+        http://blog.163.com/chen_24_fei@yeah/blog/static/170115961201231443015473/
+
+        Runtime Exception：
+        在定义方法时不需要声明会抛出runtime exception； 在调用这个方法时不需要捕获这个runtime exception； runtime exception是从java.lang.RuntimeException或java.lang.Error类衍生出来的。 例如：nullpointexception，IndexOutOfBoundsException就属于runtime exception
+
+        Exception:
+        定义方法时必须声明所有可能会抛出的exception； 在调用这个方法时，必须捕获它的checked exception，不然就得把它的exception传递下去；exception是从java.lang.Exception类衍生出来的。例如：IOException，SQLException就属于Exception
+        * */
+
     }
 }
