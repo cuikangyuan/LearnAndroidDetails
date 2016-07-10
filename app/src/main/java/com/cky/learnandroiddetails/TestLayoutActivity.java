@@ -32,6 +32,31 @@ public class TestLayoutActivity extends AppCompatActivity {
     *
     *   同时也可调用requestLayout使视图的绘制流程全部执行一遍
     * */
+
+    /*
+    *
+    *4.3.6
+    *更改器方法可以执行错误检查 然而对域直接进行赋值将不会进行这些处理
+    *如果需要返回一个可变对象的引用 应该对它进行克隆 clone
+    *
+    * hireDay.clone();
+    *
+    * 4.4.3
+    * 可以认为静态方法是没有this参数(隐式参数)的方法
+    *
+    * 静态方法不能操作对象 所以不能在静态方法中访问实例域 但是静态方法可以访问自身类的静态域
+    *
+    * 异常 编译时异常 CheckedException 运行时异常RuntimeException
+    *
+    * 如果程序没有处理Checked异常 程序在编译时即发生错误无法编译 即 没有完善错误处理的代码根本没有机会被执行
+    *
+    * 处理方法:
+    * 1 当前方法知道如何处理异常 使用try catch  处理异常
+    * 2 当前方法不知道如何处理异常 在定义方法时声明抛出该异常
+    *
+    * 运行时异常由系统自动检测并交给缺省的异常处理程序 当然也可以显式的捕获它们
+    *
+    * */
     private LinearLayout mainLayout;
 
     private static final String TAG = TestLayoutActivity.class.getSimpleName();
