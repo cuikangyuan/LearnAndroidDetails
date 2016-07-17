@@ -1,13 +1,18 @@
 package com.cky.learnandroiddetails;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class TestImageViewActivity extends AppCompatActivity {
 
     ImageView ivTestScaleType;
-
+    TextView tvHelloEventBus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +20,8 @@ public class TestImageViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_image_view);
 
         ivTestScaleType = (ImageView) findViewById(R.id.ivTestScaleType);
-        ivTestScaleType.setImageResource(R.mipmap.chinese_400x300);
+        tvHelloEventBus = (TextView) findViewById(R.id.tvHelloEventBus);
+        //ivTestScaleType.setImageResource(R.mipmap.chinese_400x300);
 
         /*
         *
@@ -36,10 +42,31 @@ public class TestImageViewActivity extends AppCompatActivity {
         *
         * */
 
+        EventBus.getDefault().register(this);
+
+        int resId = R.mipmap.chinese_400x300;
+        String msg = "Hello EventBus";
+        EventBus.getDefault().post(resId);
+        EventBus.getDefault().post(msg);
+        //ivTestScaleType.setScaleType(ImageView.ScaleType.FIT_XY);
+        //EventBus.getDefault().post(R.mipmap.chinese_400x300);
+
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void helloEventBus(int resId) {
+        ivTestScaleType.setImageResource(resId);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void helloEventBus2(String msg) {
+        tvHelloEventBus.setText(msg);
+    }
 
 
-
-        ivTestScaleType.setScaleType(ImageView.ScaleType.FIT_XY);
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }
