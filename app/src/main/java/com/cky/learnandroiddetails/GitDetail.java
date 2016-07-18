@@ -27,7 +27,7 @@ public class GitDetail {
     *
     * git reset HEAD //恢复暂存区域
     *
-    * git checkout -- xxx 使用暂存区域内容覆盖本地的文件
+    * git checkout -- xxx discard changes in working directory
     *
     * git log
     * */
