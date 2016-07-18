@@ -30,5 +30,27 @@ public class GitDetail {
     * git checkout -- xxx discard changes in working directory
     *
     * git log
+    *
+    * 默认 --mixed
+    * git reset --mixed HEAD~ 回到上一个版本
+    * 移动HEAD的指向 将其指向上一个快照
+    * 将HEAD移动后指向的快照回滚到暂存区域
+    *
+    * git reset --mixed HEAD~2
+    *
+    *
+    * git reset --soft HEAD~
+    * 移动HEAD的指向 将其指向上一个快照 撤销一次提交
+    *
+    * git reset --hard HEAD~
+    * 移动HEAD的指向 将其指向上一个快照
+    * 将HEAD移动后指向的快照回滚到暂存区域
+    * 将暂存区域的文件还原到工作目录
+    *
+    * 回滚指定快照
+    *
+    * 回滚快照个别文件 HEAD指针不会移动
+    *
+    * git reflog Git记录下的每一次操作
     * */
 }
