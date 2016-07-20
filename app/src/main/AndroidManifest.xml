@@ -42,16 +42,19 @@
             android:process=":remote" />
 
         <activity android:name=".TestLayoutActivity" />
-        <activity android:name=".TestImageViewActivity"></activity>
-        <activity android:name=".TestDispatchEventActivity">
-
-        </activity>
-        <activity android:name=".TestViewGroupEventActivity">
+        <activity android:name=".TestImageViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".TestDispatchEventActivity">
+
+        </activity>
+        <activity android:name=".TestViewGroupEventActivity">
+
         </activity>
     </application>
 

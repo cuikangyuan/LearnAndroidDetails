@@ -44,7 +44,8 @@ public class TestImageViewActivity extends AppCompatActivity {
 
         EventBus.getDefault().register(this);
 
-        int resId = R.mipmap.chinese_400x300;
+        //Integer resId = R.mipmap.chinese_400x300;
+        Integer resId = R.mipmap.ic_launcher;
         String msg = "Hello EventBus";
         EventBus.getDefault().post(resId);
         EventBus.getDefault().post(msg);
@@ -54,8 +55,9 @@ public class TestImageViewActivity extends AppCompatActivity {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void helloEventBus(int resId) {
+    public void helloEventBus(Integer resId) {
         ivTestScaleType.setImageResource(resId);
+        //ivTestScaleType.setImageDrawable(getResources().getDrawable(resId));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
