@@ -36,8 +36,8 @@ public class TestDispatchEventActivity extends AppCompatActivity {
                 /*
                 * 可以理解为 onTouch 返回true时 此事件被onTouch消费掉 不再继续向下传递
                 * */
-                //return true;//此时 onClick 方法将不再执行
-                return false;
+                return true;//此时 onClick 方法将不再执行
+                //return false;
             }
         });
     }

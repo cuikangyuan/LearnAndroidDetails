@@ -17,6 +17,6 @@ public class MyLayout extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         //return super.onInterceptTouchEvent(ev);
-        return true;
+        return false;
     }
 }

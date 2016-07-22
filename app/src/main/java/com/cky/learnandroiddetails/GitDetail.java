@@ -52,5 +52,22 @@ public class GitDetail {
     * 回滚快照个别文件 HEAD指针不会移动
     *
     * git reflog Git记录下的每一次操作
+    *
+    * git diff 比较暂存区域与 工作目录
+    *
+    * git diff xxxxx xxxxx 比较Git仓库两个快照
+    * f5f6824 f5f4bfa
+    *
+    * 比较当前工作目录和Git仓库快照
+    * git diff f5f4bfa
+    *
+    * 比较最新提交的快照和当前工作目录
+    * git diff HEAD
+    *
+    * 比较最新提交的快照与暂存区域的文件
+    * git diff --cached
+    *
+    * 比较快照与暂存区域的文件
+    * git diff --cached f5f4bfa
     * */
 }
