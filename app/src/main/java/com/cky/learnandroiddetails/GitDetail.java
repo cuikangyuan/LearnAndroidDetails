@@ -69,5 +69,24 @@ public class GitDetail {
     *
     * 比较快照与暂存区域的文件
     * git diff --cached f5f4bfa
+    *
+    * 修改最后一次提交
+    * git commit --amend -m "新的提交说明"
+    *
+    * 将a.md 恢复到工作目录
+    * git checkout -- a.md
+    *
+    * git rm a.md
+    * 删除工作目录 和 暂存区域的文件 (取消跟踪，在下一次提交时不纳入版本管理)
+    *
+    * 暂存区域文件 与 工作目录文件不同时 rm命令
+    * git rm -f a.md 可将两个文件都删除
+    *
+    * 只想删除暂存区域的文件 git rm --cached a.md
+    *
+    * 重命名文件
+    * git mv a.md aa.md
+    *
+    * .gitignore 文件中可以记录 不想被Git跟踪的文件
     * */
 }
