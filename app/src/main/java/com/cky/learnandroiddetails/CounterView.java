@@ -46,4 +46,19 @@ public class CounterView extends View implements View.OnClickListener{
         mCount++;
         invalidate();
     }
+
+    /*
+    * scrollBy 实际上调用了 scrollTo, 以实现相对滑动
+    * scrollTo实现了基于所传参数的绝对滑动
+    *
+    * 在滑动过程中
+    * mScrollX = View左边缘View内容左边缘在水平方向的距离
+    * mScrollY = View上边缘和View内容上边缘在竖直方向的距离
+    *
+    * scrollBy scrollTo只能改变View内容的位置而不能改变View在布局中的位置
+    *
+    * View左边缘在View内容左边缘右边时 mScrollX 正值
+    *
+    * View上边缘在View内容上边缘下边时 mScrollY 正值
+    * */
 }
