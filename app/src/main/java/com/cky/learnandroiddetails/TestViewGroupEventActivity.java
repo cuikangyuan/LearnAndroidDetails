@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 public class TestViewGroupEventActivity extends AppCompatActivity {
@@ -58,6 +59,17 @@ public class TestViewGroupEventActivity extends AppCompatActivity {
         myLayout = (MyLayout) findViewById(R.id.myLayout);
         mButton1 = (Button) findViewById(R.id.button1);
         mButton2 = (Button) findViewById(R.id.button2);
+
+        /*
+        *改变 参数以实现View的滑动
+        * */
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mButton1.getLayoutParams();
+
+        params.width += 10;
+
+        params.leftMargin += 100;
+        mButton1.requestLayout();//或者
+        //mButton1.setLayoutParams(params);
 
         myLayout.setOnTouchListener(new View.OnTouchListener() {
             @Override
