@@ -44,10 +44,8 @@
         <activity android:name=".TestLayoutActivity" />
         <activity android:name=".TestImageViewActivity" />
         <activity android:name=".TestDispatchEventActivity" />
-        <activity android:name=".TestViewGroupEventActivity"></activity>
-        <activity android:name=".TestTipActivity">
-
-        </activity>
+        <activity android:name=".TestViewGroupEventActivity" />
+        <activity android:name=".TestTipActivity"></activity>
         <activity android:name=".TestNotificationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,6 +53,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MVP.LoginActivity"></activity>
     </application>
 
 </manifest>
