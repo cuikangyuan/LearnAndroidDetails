@@ -47,13 +47,15 @@
         <activity android:name=".TestViewGroupEventActivity" />
         <activity android:name=".TestTipActivity"></activity>
         <activity android:name=".TestNotificationActivity">
+
+        </activity>
+        <activity android:name=".MVP.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MVP.LoginActivity"></activity>
     </application>
 
 </manifest>
