@@ -110,13 +110,14 @@ public class ScrollerLayout extends ViewGroup {
                 int targetIndex = (getScrollX() + getWidth() / 2) / getWidth();
                 int dx = targetIndex * getWidth() - getScrollX();
                 //2.调用以下方法 初始化滚动数据并刷新界面
-                mScroller.startScroll(getScrollX(), 0, dx, 0);
-                invalidate();
+                mScroller.startScroll(getScrollX(), 0, dx, 0);//该方法只是对参数的一些保存 并不产生滑动动作
+                invalidate();//重绘
                 break;
         }
         return super.onTouchEvent(event);
     }
 
+    //真正实现滑动的地方
     @Override
     public void computeScroll() {
         //3.完成平滑滑动的逻辑
