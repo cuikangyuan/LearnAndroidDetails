@@ -45,11 +45,12 @@
         <activity android:name=".TestImageViewActivity" />
         <activity android:name=".TestDispatchEventActivity" />
         <activity android:name=".TestViewGroupEventActivity" />
-        <activity android:name=".TestTipActivity"></activity>
-        <activity android:name=".TestNotificationActivity">
-
+        <activity android:name=".TestTipActivity" />
+        <activity android:name=".TestNotificationActivity" />
+        <activity android:name=".MVP.LoginActivity"></activity>
+        <activity android:name=".TestScrollerActivity">
         </activity>
-        <activity android:name=".MVP.LoginActivity">
+        <activity android:name=".TestScrollerActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
