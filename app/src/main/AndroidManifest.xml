@@ -47,7 +47,7 @@
         <activity android:name=".TestViewGroupEventActivity" />
         <activity android:name=".TestTipActivity" />
         <activity android:name=".TestNotificationActivity" />
-        <activity android:name=".MVP.LoginActivity"></activity>
+        <activity android:name=".MVP.LoginActivity" />
         <activity android:name=".TestScrollerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,9 +55,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestScrollerActivity2">
-
-        </activity>
+        <activity android:name=".TestScrollerActivity2"></activity>
+        <activity android:name=".TestInterceptActivity"></activity>
     </application>
 
 </manifest>
