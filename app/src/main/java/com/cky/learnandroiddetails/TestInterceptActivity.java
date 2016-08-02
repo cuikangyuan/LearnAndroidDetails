@@ -15,6 +15,10 @@ public class TestInterceptActivity extends AppCompatActivity {
     *   父容器不拦截任何事件 所有的事件都传递给子元素 如果子元素需要此事件 就直接消耗掉  否则则交由父容器进行处理
     *   配合requestDisallowInterceptTouchEvent方法使用
     * */
+
+    /*
+    * 当viewGroup决定拦截事件后 后续的点击事件将默认交给它处理并且不会再调用onInterceptTouchEvent方法
+    * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
