@@ -49,14 +49,17 @@
         <activity android:name=".TestNotificationActivity" />
         <activity android:name=".MVP.LoginActivity" />
         <activity android:name=".TestScrollerActivity">
+
+        </activity>
+        <activity android:name=".TestScrollerActivity2" />
+        <activity android:name=".TestInterceptActivity" />
+        <activity android:name=".TestDashedViewAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestScrollerActivity2"></activity>
-        <activity android:name=".TestInterceptActivity"></activity>
     </application>
 
 </manifest>
