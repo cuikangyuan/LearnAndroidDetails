@@ -48,12 +48,12 @@
         <activity android:name=".TestTipActivity" />
         <activity android:name=".TestNotificationActivity" />
         <activity android:name=".MVP.LoginActivity" />
-        <activity android:name=".TestScrollerActivity">
-
-        </activity>
+        <activity android:name=".TestScrollerActivity"></activity>
         <activity android:name=".TestScrollerActivity2" />
         <activity android:name=".TestInterceptActivity" />
         <activity android:name=".TestDashedViewAct">
+        </activity>
+        <activity android:name=".TestRefreshListViewAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
