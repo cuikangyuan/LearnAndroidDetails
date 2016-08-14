@@ -19,6 +19,8 @@ public class TestRefreshListViewAct extends AppCompatActivity {
 
     PullRefreshListAdapter pullRefreshListAdapter;
 
+    private static final String TAG = TestRefreshListViewAct.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,14 +38,33 @@ public class TestRefreshListViewAct extends AppCompatActivity {
         for (int i = 0; i < 20; i++) {
             datas.add("原有数据-" + i);
         }
+        /*
+        final View headerView = View.inflate(this, R.layout.refresh_header, null);
 
-        View headerView = View.inflate(this, R.layout.refresh_header, null);
-        int headerViewHeight = headerView.getHeight();
 
-        headerView.setPadding(0, -headerViewHeight, 0, 0);
+        headerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
 
-        pullRefreshListView.addHeaderView(headerView);
+                headerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                //只有在 onLayout 之后执行 才能获得高
+                int headerViewHeight = headerView.getHeight();
 
+                //获取测量完的高度
+                //int headerViewHeight = headerView.getMeasuredHeight();
+
+                Log.d(TAG, "headerViewHeight -> " + headerViewHeight);
+
+                headerView.setPadding(0, -headerViewHeight, 0, 0);
+
+                pullRefreshListView.addHeaderView(headerView);
+            }
+        });
+
+
+        headerView.measure(0, 0);//主动通知系统去测量
+        int headerViewHeight = headerView.getMeasuredHeight();
+        */
         pullRefreshListAdapter = new PullRefreshListAdapter();
         pullRefreshListView.setAdapter(pullRefreshListAdapter);
     }
