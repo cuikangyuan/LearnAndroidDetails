@@ -1,6 +1,9 @@
 package com.cky.learnandroiddetails;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,14 @@ public class TestRefreshListViewAct extends AppCompatActivity {
     private ArrayList<String> datas = new ArrayList<String>();
 
     PullRefreshListAdapter pullRefreshListAdapter;
+
+    private Handler handler =  new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            pullRefreshListAdapter.notifyDataSetChanged();
+            pullRefreshListView.refreshFinished();
+        }
+    };
 
     private static final String TAG = TestRefreshListViewAct.class.getSimpleName();
 
@@ -67,8 +78,48 @@ public class TestRefreshListViewAct extends AppCompatActivity {
         */
         pullRefreshListAdapter = new PullRefreshListAdapter();
         pullRefreshListView.setAdapter(pullRefreshListAdapter);
+
+        pullRefreshListView.setOnRefreshListener(new PullRefreshListView.OnRefreshListener() {
+            @Override
+            public void onPullRefresh() {
+                //在此处 请求服务器 数据
+                getDataFromServer();
+            }
+
+            @Override
+            public void onLoadingMore() {
+                getMoreDataFromServer();
+            }
+        });
     }
 
+    private void getDataFromServer() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(3000);
+                datas.add(0, "下拉刷新的数据");
+
+                handler.sendEmptyMessage(0);
+
+            }
+        }).start();
+    }
+
+    private void getMoreDataFromServer() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(3000);
+                datas.add("加载更多的数据-1");
+                datas.add("加载更多的数据-2");
+                datas.add("加载更多的数据-3");
+
+                handler.sendEmptyMessage(0);
+
+            }
+        }).start();
+    }
     class PullRefreshListAdapter extends BaseAdapter {
 
         @Override
@@ -90,7 +141,7 @@ public class TestRefreshListViewAct extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             TextView textView = new TextView(TestRefreshListViewAct.this);
-            textView.setPadding(20, 20, 20, 20);
+            textView.setPadding(60, 60, 60, 60);
             textView.setTextSize(18);
             textView.setText(datas.get(position));
 

@@ -13,13 +13,16 @@
 
         <ImageView
             android:background="@mipmap/indicator_arrow"
+            android:id="@+id/iv_arrow"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ProgressBar
             android:layout_centerInParent="true"
+            android:id="@+id/pb_refresh"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:visibility="invisible"
             android:indeterminateDuration="1000"
             android:indeterminateDrawable="@drawable/indeterminate_drawable"/>
     </RelativeLayout>
@@ -33,17 +36,19 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
         <TextView
+            android:id="@+id/tv_refresh_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#aa000000"
             android:text="下拉刷新"/>
         <TextView
+            android:id="@+id/tv_last_refresh_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="13sp"
             android:textColor="@android:color/darker_gray"
-            android:text="最后刷新时间:2016-08-13"/>
+            android:text=""/>
 
     </LinearLayout>
 
