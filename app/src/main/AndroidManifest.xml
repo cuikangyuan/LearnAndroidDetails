@@ -54,6 +54,8 @@
         <activity android:name=".TestDashedViewAct">
         </activity>
         <activity android:name=".TestRefreshListViewAct">
+        </activity>
+        <activity android:name=".TestViewAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
