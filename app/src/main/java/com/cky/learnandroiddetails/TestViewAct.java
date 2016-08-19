@@ -3,6 +3,7 @@ package com.cky.learnandroiddetails;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class TestViewAct extends AppCompatActivity {
 
         textView2.setText("Footer-1");
 
-        mContactAdapter.addHeader(textView1);
+        //mContactAdapter.addHeader(textView1);
         mContactAdapter.addFooter(textView2);
 
         DividerItemDecoration itemDecoration = new DividerItemDecoration(TestViewAct.this, DividerItemDecoration.VERTICAL_LIST);
@@ -41,5 +42,12 @@ public class TestViewAct extends AppCompatActivity {
         mRecyclerViewPlus.addItemDecoration(itemDecoration);
 
         mRecyclerViewPlus.setAdapter(mContactAdapter);
+
+        mContactAdapter.setOnItemClickListener(new ContactAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                ToastUtil.showToast(TestViewAct.this, position + "");
+            }
+        });
     }
 }

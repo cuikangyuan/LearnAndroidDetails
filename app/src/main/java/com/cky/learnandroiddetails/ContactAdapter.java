@@ -30,7 +30,7 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private static final int TYPE_FOOTER = 2;
     private static final int TYPE_GENERIC = 3;
 
-    private OnItemClickListener onItemClickListener;
+    private static OnItemClickListener onItemClickListener;
 
     private OnItemLongClickListener onItemLongClickListener;
 
@@ -90,6 +90,14 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public void removeHeader(View header) {
+        if (headers.contains(header)) {
+            notifyItemRemoved(headers.indexOf(header));
+            headers.remove(header);
+            if (header.getParent() != null) {
+                ((ViewGroup)header.getParent()).removeView(header);
+            }
+
+        }
 
     }
 
@@ -101,7 +109,14 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public void removeFooter(View footer) {
+        if (headers.contains(footer)) {
+            notifyItemRemoved(footers.indexOf(footer));
+            headers.remove(footer);
+            if (footer.getParent() != null) {
+                ((ViewGroup)footer.getParent()).removeView(footer);
+            }
 
+        }
     }
 
     private void prepareHeaderFooter(HeaderFooterViewHolder holder, View view) {
@@ -148,6 +163,15 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             tvContactName = (TextView)itemView.findViewById(R.id.tv_contact_name);
             btnMessage = (Button)itemView.findViewById(R.id.btn_message);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onItemClickListener != null) {
+                        onItemClickListener.onItemClick(v, getLayoutPosition());
+                    }
+                }
+            });
         }
     }
 
@@ -160,10 +184,10 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public interface OnItemClickListener {
-        void onItemClick();
+        void onItemClick(View view, int position);
     }
 
     public interface OnItemLongClickListener {
-        void onItemLongClick();
+        void onItemLongClick(View view, int position);
     }
 }
