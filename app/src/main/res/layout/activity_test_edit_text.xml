@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cky.learnandroiddetails.TestEditTextAct">
+
+    <EditText
+        android:id="@id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+
+    <ToggleButton
+        android:layout_below="@+id/etPassword"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btnToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        android:background="@drawable/toggle_show_password"/>
+</RelativeLayout>
