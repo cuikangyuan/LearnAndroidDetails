@@ -13,7 +13,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 
 /**
- * Created by Administrator on 2016/8/24.
  * 在 焦点变化时 和 输入的内容变化时 都需要判断是否显示  清除图标
  */
 
@@ -59,7 +58,7 @@ public class CleanableEditText extends EditText {
             mHasFocus = hasFocus;
             //EditText 此时获得焦点
             if (hasFocus) {
-                boolean hasText = getText().toString().trim().length() >= 1;
+                boolean hasText = getText().toString().length() >= 1;
                 if (hasText) {
                     setClearDrawableVisible(hasText);
                 }
@@ -83,7 +82,7 @@ public class CleanableEditText extends EditText {
 
         @Override
         public void afterTextChanged(Editable s) {
-            boolean isVisiable = getText().toString().trim().length() >= 1;
+            boolean isVisiable = getText().toString().length() >= 1;
             setClearDrawableVisible(isVisiable);
         }
     }
