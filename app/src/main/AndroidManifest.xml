@@ -56,13 +56,15 @@
         <activity android:name=".TestViewAct" />
         <activity android:name=".TestEditTextAct">
         </activity>
-        <activity android:name=".TestScanCode"></activity>
-        <activity android:name=".TestWidgetAct">
+        <activity android:name=".TestScanCode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".TestWidgetAct">
+
         </activity>
     </application>
 
