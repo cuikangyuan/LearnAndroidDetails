@@ -11,4 +11,9 @@
     <style name="myToggle" parent="@android:style/Widget.CompoundButton">
         <item name="android:button">@drawable/toggle_show_password</item>
     </style>
+
+    <style name="pop_window_anim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_show_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_dismiss_anim</item>
+    </style>
 </resources>
