@@ -1,22 +1,26 @@
 package com.cky.learnandroiddetails;
 
 import android.content.Context;
+import android.support.v4.view.MotionEventCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Administrator on 2016/8/15.
  */
 
-public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements ItemTouchHelperAdapter {
 
     private List<Contact> mContacts;
 
@@ -34,11 +38,14 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private OnItemLongClickListener onItemLongClickListener;
 
+    private final onStartDragListener onStartDragListener;
 
-    public ContactAdapter(Context context, List<Contact> contacts) {
+
+    public ContactAdapter(Context context, List<Contact> contacts, onStartDragListener onStartDragListener) {
 
         this.mContacts = contacts;
         this.mContext = context;
+        this.onStartDragListener = onStartDragListener;
     }
 
     private Context getContext() {
@@ -55,7 +62,7 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         return new ViewHolder(contactView);
         */
         if (viewType == TYPE_GENERIC) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contact, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_contact_without_btn, parent, false);
             return new ViewHolder(view);
         } else {
             FrameLayout frameLayout = new FrameLayout(parent.getContext());
@@ -124,9 +131,20 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         holder.base.addView(view);
     }
 
-    private void prepareGeneric(ViewHolder holder, Contact contact) {
+    private void prepareGeneric(final ViewHolder holder, Contact contact) {
         holder.tvContactName.setText(contact.getmName());
-        holder.btnMessage.setText(contact.getmOnline()?"OnLine" : "OffLine");
+        //holder.btnMessage.setText(contact.getmOnline()?"OnLine" : "OffLine");
+        holder.ivHandle.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+                    if (onStartDragListener != null ) {
+                        onStartDragListener.onStartDrag(holder);
+                    }
+                }
+                return false;
+            }
+        });
     }
     @Override
     public int getItemViewType(int position) {
@@ -153,16 +171,30 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         this.onItemLongClickListener = onItemLongClickListener;
     }
 
+    @Override
+    public void onItemMove(int fromPosition, int toPosition) {
+        Collections.swap(mContacts, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        mContacts.remove(position);
+        notifyItemRemoved(position);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView tvContactName;
-        public Button btnMessage;
+        //public Button btnMessage;
+        public ImageView ivHandle;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             tvContactName = (TextView)itemView.findViewById(R.id.tv_contact_name);
-            btnMessage = (Button)itemView.findViewById(R.id.btn_message);
+            //btnMessage = (Button)itemView.findViewById(R.id.btn_message);
+            ivHandle = (ImageView) itemView.findViewById(R.id.iv_handle);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
