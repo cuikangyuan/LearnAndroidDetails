@@ -15,7 +15,11 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 public class TestWebViewAct extends Activity {
-
+    /*
+    * http://www.kymjs.com/code/2015/05/03/01
+    *
+    * http://www.kymjs.com/code/2015/05/04/01
+    * */
     WebView mWebView;
 
     private static final String TARGET_URL = "http://www.chiphell.com";
