@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="标题"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.cky.learnandroiddetails.RecyclerViewPlus
+        android:layout_below="@+id/tv_title"
+        android:layout_above="@+id/btn_confirm"
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.cky.learnandroiddetails.RecyclerViewPlus>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_confirm"
+        android:text="确认"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

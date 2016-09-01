@@ -13,6 +13,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupWindow;
 
+import com.cky.learnandroiddetails.widget.RejectedPopWindow;
+
+import java.util.ArrayList;
+
 public class TestWidgetAct extends AppCompatActivity {
 
     Button mShowPopUpBtn;
@@ -29,9 +33,18 @@ public class TestWidgetAct extends AppCompatActivity {
         mShowPopUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopUpWindow();
+                //showPopUpWindow();
+                showRejectedPopWindow();
             }
         });
+    }
+
+    private void showRejectedPopWindow() {
+        PopupWindow popUpWindow = new RejectedPopWindow(TestWidgetAct.this, TestWidgetAct.this.getWindow(), new ArrayList());
+        popUpWindow.showAtLocation(TestWidgetAct.this.findViewById(R.id.activity_test_widget),
+                Gravity.BOTTOM,
+                0,
+                0);
     }
 
     private void showPopUpWindow() {
