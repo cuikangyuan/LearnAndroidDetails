@@ -39,9 +39,6 @@ public class CouponDisplayView extends RelativeLayout{
     public CouponDisplayView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mPaint.setDither(true);
-        mPaint.setColor(Color.WHITE);
-        mPaint.setStyle(Paint.Style.FILL);
     }
 
     @Override
@@ -62,6 +59,11 @@ public class CouponDisplayView extends RelativeLayout{
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        mPaint.reset();
+        mPaint.setDither(true);
+        mPaint.setColor(Color.WHITE);
+        mPaint.setStyle(Paint.Style.FILL);
 
         for (int i=0;i<circleNum;i++){
             float x = gap+radius+remain/2+((gap+radius*2)*i);
