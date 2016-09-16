@@ -45,6 +45,20 @@ public class TestWidgetAct extends AppCompatActivity {
                 Gravity.BOTTOM,
                 0,
                 0);
+
+        //popUp 窗体出现时 整体背景变暗
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = 0.7f;
+        getWindow().setAttributes(lp);
+
+        popUpWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                WindowManager.LayoutParams lp = getWindow().getAttributes();
+                lp.alpha = 1f;
+                getWindow().setAttributes(lp);
+            }
+        });
     }
 
     private void showPopUpWindow() {
