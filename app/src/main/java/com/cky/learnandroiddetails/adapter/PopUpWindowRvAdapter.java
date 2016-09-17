@@ -30,6 +30,9 @@ public class PopUpWindowRvAdapter extends RecyclerView.Adapter<PopUpWindowRvAdap
 
     private static OnItemClickListener onItemClickListener;
 
+
+    private PopUpWindowItemCheckedChangeListener popUpWindowItemCheckedChangeListener;
+
     public PopUpWindowRvAdapter(Context mContext, List<PopUpWindowItem> data) {
         this.mContext = mContext;
         this.data = data;
@@ -87,6 +90,11 @@ public class PopUpWindowRvAdapter extends RecyclerView.Adapter<PopUpWindowRvAdap
                     holder.mNameEt.setVisibility(View.GONE);
                     checkStates[position] = false;
                 }
+
+                if (popUpWindowItemCheckedChangeListener != null) {
+                    popUpWindowItemCheckedChangeListener.onCheckedChanged(isChecked, position);
+                }
+
             }
         });
     }
@@ -137,7 +145,16 @@ public class PopUpWindowRvAdapter extends RecyclerView.Adapter<PopUpWindowRvAdap
         void onItemClick(View view, int position);
     }
 
+    public interface PopUpWindowItemCheckedChangeListener {
+        void onCheckedChanged(boolean isChecked, int position);
+        void onCheckedChanged(boolean isChecked, int position, String content);
+    }
+
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
+    }
+
+    public void setPopUpWindowItemCheckedChangeListener(PopUpWindowItemCheckedChangeListener popUpWindowItemCheckedChangeListener) {
+        this.popUpWindowItemCheckedChangeListener = popUpWindowItemCheckedChangeListener;
     }
 }
