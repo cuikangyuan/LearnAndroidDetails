@@ -2,7 +2,10 @@ package com.cky.learnandroiddetails;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+/*
+* https://www.bignerdranch.com/blog/viewpager-without-fragments/
+* http://stackoverflow.com/questions/18710561/can-i-use-view-pager-with-views-not-with-fragments
+* */
 public class TestViewPagerWithoutFragmentAct extends AppCompatActivity {
 
     @Override
