@@ -68,13 +68,13 @@
         <activity android:name=".TestCouponDisplayWidgetAct">
         </activity>
         <activity android:name=".TestImmersiveModeAct">
+        </activity>
+        <activity android:name=".TestViewPagerWithoutFragmentAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".TestViewPagerWithoutFragmentAct">
         </activity>
     </application>
 
