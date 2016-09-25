@@ -9,6 +9,7 @@ import com.cky.learnandroiddetails.adapter.CustomPagerAdapter;
 /*
 * https://www.bignerdranch.com/blog/viewpager-without-fragments/
 * http://stackoverflow.com/questions/18710561/can-i-use-view-pager-with-views-not-with-fragments
+* http://www.voidcn.com/blog/u014165119/article/p-4475977.html
 * */
 public class TestViewPagerWithoutFragmentAct extends AppCompatActivity {
 

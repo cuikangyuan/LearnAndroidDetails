@@ -8,9 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cky.learnandroiddetails.widget.SpaceItemDecoration;
+
+import static com.cky.learnandroiddetails.R.id.count;
 
 /*
 * http://zijianwang90.github.io/blog/Android-dev-recyclerview-replace-gridview/
@@ -40,6 +43,8 @@ public class TestGridAct extends AppCompatActivity {
 
         private Context mContext;
 
+        //private int count = 6; //临时测试
+
         private int[] mData = {
                 R.mipmap.test1,
                 R.mipmap.test2,
@@ -68,24 +73,31 @@ public class TestGridAct extends AppCompatActivity {
         public void onBindViewHolder(TestGridViewHolder holder, int position) {
 
             int resId = mData[position];
-            //holder.imageView.setBackgroundResource(resId);
-            holder.textView.setText(position + 1 + "");
+            holder.imageView.setBackgroundResource(resId);
+/*
+            if (position == count - 1) {
+                holder.textView.setBackgroundColor(Color.argb(150, 0, 0, 0));
+                holder.textView.setText("共" + count + "张");
+            }
+*/
         }
 
         @Override
         public int getItemCount() {
             return mData.length;
+            //return count;
         }
 
         class TestGridViewHolder extends RecyclerView.ViewHolder {
 
-            //ImageView imageView;
+            ImageView imageView;
             TextView textView;
 
             public TestGridViewHolder(View itemView) {
                 super(itemView);
-                //imageView = (ImageView) itemView.findViewById(R.id.image);
-                textView = (TextView) itemView.findViewById(R.id.text);
+                imageView = (ImageView) itemView.findViewById(R.id.image);
+                textView = (TextView) itemView.findViewById(count);
+                //textView = (TextView) itemView.findViewById(R.id.text);
 
             }
         }

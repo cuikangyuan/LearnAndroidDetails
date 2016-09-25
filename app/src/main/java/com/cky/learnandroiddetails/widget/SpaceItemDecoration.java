@@ -45,9 +45,12 @@ public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
             //左
             //c.drawLine(x, y, x, y + height, paint);
             //右
-            c.drawLine(x + width, y, x + width, y + height, paint);
+            //c.drawLine(x + width, y, x + width, y + height, paint);
             //下
-            c.drawLine(x, y + height, x + width, y + height, paint);
+            //c.drawLine(x, y + height, x + width, y + height, paint);
+
+            //画内间距
+            childView.setPadding(0, 0, 5, 5);
 
         }
     }
