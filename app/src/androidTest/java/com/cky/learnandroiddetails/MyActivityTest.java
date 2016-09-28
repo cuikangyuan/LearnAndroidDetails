@@ -16,6 +16,7 @@ import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
 
 /**
  * 作者：cky
@@ -39,7 +40,7 @@ public class MyActivityTest {
 
         SystemClock.sleep (5000);
 
-        onView(withId(R.id.text_view)).equals("Hello, Tim");
+        onView(withId(R.id.text_view)).check(matches(withText("Hello, Tim")));
 
         SystemClock.sleep (5000);
 
