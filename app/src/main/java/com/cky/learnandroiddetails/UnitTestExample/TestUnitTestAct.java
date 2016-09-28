@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.cky.learnandroiddetails.R;
 /*
 * 参考http://stackoverflow.com/questions/2047261/using-android-test-framework
+* http://evgenii.com/blog/testing-activity-in-android-studio-tutorial-part-1/
 * */
 public class TestUnitTestAct extends AppCompatActivity {
 
