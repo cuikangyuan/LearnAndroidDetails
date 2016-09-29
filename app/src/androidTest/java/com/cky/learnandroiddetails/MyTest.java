@@ -3,9 +3,8 @@ package com.cky.learnandroiddetails;
 import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
-import android.widget.TextView;
 
-import com.cky.learnandroiddetails.UnitTestExample.TestUnitTestAct;
+import com.cky.learnandroiddetails.canvas.CanvasViewAct;
 
 /**
  * 作者：cky
@@ -13,12 +12,12 @@ import com.cky.learnandroiddetails.UnitTestExample.TestUnitTestAct;
  * 描述：
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<TestUnitTestAct> {
+public class MyTest extends ActivityInstrumentationTestCase2<CanvasViewAct> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(TestUnitTestAct.class);
+        super(CanvasViewAct.class);
     }
 
     @Override
@@ -30,6 +29,7 @@ public class MyTest extends ActivityInstrumentationTestCase2<TestUnitTestAct> {
 
     //运行的函数即可测试
     public void testTextView() {
+        /*
         try {
             runTestOnUiThread(new Runnable() {
                 @Override
@@ -43,7 +43,7 @@ public class MyTest extends ActivityInstrumentationTestCase2<TestUnitTestAct> {
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
-
+        */
         SystemClock.sleep(400000000);
     }
 }
