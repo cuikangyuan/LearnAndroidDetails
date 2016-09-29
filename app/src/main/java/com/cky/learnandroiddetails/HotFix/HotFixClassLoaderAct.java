@@ -15,7 +15,7 @@ public class HotFixClassLoaderAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hot_fix_class_loader);
 
-        LogOutClassLoaderName();
+        //LogOutClassLoaderName();
     }
 
     private void LogOutClassLoaderName() {
@@ -27,5 +27,9 @@ public class HotFixClassLoaderAct extends AppCompatActivity {
 
             classLoader = classLoader.getParent();
         }
+    }
+
+    private void loadHotFixPack() {
+
     }
 }

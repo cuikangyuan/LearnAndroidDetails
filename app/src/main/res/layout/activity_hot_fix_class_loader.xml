@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_hot_fix_class_loader"
@@ -9,6 +9,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.cky.learnandroiddetails.HotFix.HotFixClassLoaderAct">
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/load_dex_file_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LoadDexFile"/>
+
+    <TextView
+        android:id="@+id/dex_file_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
