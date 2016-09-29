@@ -72,6 +72,9 @@
         <activity android:name=".TestDynamicSelectorAct">
         </activity>
         <activity android:name=".UnitTestExample.TestUnitTestAct">
+
+        </activity>
+        <activity android:name=".HotFix.HotFixClassLoaderAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
