@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.canvas.CanvasViewAct;
+import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorationAct;
 
 /**
  * 作者：cky
@@ -12,12 +13,12 @@ import com.cky.learnandroiddetails.canvas.CanvasViewAct;
  * 描述：
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<CanvasViewAct> {
+public class MyTest extends ActivityInstrumentationTestCase2<AddRecyclerViewDecorationAct> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(CanvasViewAct.class);
+        super(AddRecyclerViewDecorationAct.class);
     }
 
     @Override
