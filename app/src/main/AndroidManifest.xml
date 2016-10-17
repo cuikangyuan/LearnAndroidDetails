@@ -71,14 +71,17 @@
         <activity android:name=".TestDynamicSelectorAct"/>
         <activity android:name=".UnitTestExample.TestUnitTestAct"/>
         <activity android:name=".HotFix.HotFixClassLoaderAct">
+
+        </activity>
+        <activity android:name=".canvas.CanvasViewAct"/>
+        <activity android:name=".recyclerViewDecoration.AddRecyclerViewDecorationAct">
+        </activity>
+        <activity android:name=".actsince20161017.BottomDialogExampleAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-        </activity>
-        <activity android:name=".canvas.CanvasViewAct"/>
-        <activity android:name=".recyclerViewDecoration.AddRecyclerViewDecorationAct">
         </activity>
     </application>
 
