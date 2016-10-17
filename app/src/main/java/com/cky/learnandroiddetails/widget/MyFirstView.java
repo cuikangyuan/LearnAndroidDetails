@@ -35,11 +35,11 @@ public class MyFirstView extends View {
     private int viewHeight;
 
     public MyFirstView(Context context) {
-        super(context);
+        super(context, null);
     }
 
     public MyFirstView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public MyFirstView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -98,7 +98,7 @@ public class MyFirstView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        mPaint.setColor(Color.YELLOW);
+        mPaint.setColor(Color.RED);
         canvas.drawCircle(viewWidth/2, viewHeight/2, viewWidth/2, mPaint);
         mPaint.setColor(textColor);
         canvas.drawText(textContent,

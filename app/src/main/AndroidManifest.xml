@@ -77,6 +77,8 @@
         <activity android:name=".recyclerViewDecoration.AddRecyclerViewDecorationAct">
         </activity>
         <activity android:name=".actsince20161017.BottomDialogExampleAct">
+        </activity>
+        <activity android:name=".actsince20161017.ExampleAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
