@@ -32,7 +32,7 @@ public class WebViewAndH5 extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                //testMethod(mWebView);
+                testMethod(mWebView);
             }
         });
 
@@ -42,9 +42,9 @@ public class WebViewAndH5 extends AppCompatActivity {
     private void testMethod(WebView webView) {
         String call = "javascript:sayHello()";
 
-        call = "javascript:alertMessage(\"" + "content" + "\")";
+        //call = "javascript:alertMessage(\"" + "我是原生传递到H5的参数" + "\")";
 
-        call = "javascript:toastMessage(\"" + "content" + "\")";
+        //call = "javascript:toastMessage(\"" + "我先从原生到H5,再从H5传递到原生" + "\")";
 
         call = "javascript:sumToJava(1,2)";
         webView.loadUrl(call);
