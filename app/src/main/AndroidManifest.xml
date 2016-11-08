@@ -85,6 +85,14 @@
 
         <activity android:name=".TransparentActivity.MainActivity"
             android:theme="@style/Theme.Transparent">
+
+        </activity>
+
+        <activity android:name=".TimePickerWithSecond.MainActivity">
+
+        </activity>
+
+        <activity android:name=".TimePickerWithSecond.wheel.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

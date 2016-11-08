@@ -25,7 +25,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initHotFix();
+        //initHotFix();
         //API 14 引入的 用来监听所以Activity的生命回调
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
