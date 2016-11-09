@@ -3,4 +3,8 @@
     <string name="red">Red</string>
     <string name="yellow">Yellow</string>
     <string name="green">Green</string>
+    <string name="action_settings">Settings</string>
+    <string name="time_set">Set time</string>
+    <string name="cancel">Cancel</string>
+    <string name="time">Time : </string>
 </resources>
