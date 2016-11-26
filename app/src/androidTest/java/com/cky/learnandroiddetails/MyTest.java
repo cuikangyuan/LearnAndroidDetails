@@ -11,6 +11,7 @@ import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorat
  * 作者：cky
  * 时间：2016/9/28 16:43
  * 描述：
+ * https://segmentfault.com/u/chriszou/articles
  */
 
 public class MyTest extends ActivityInstrumentationTestCase2<AddRecyclerViewDecorationAct> {
