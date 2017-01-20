@@ -15,6 +15,12 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerInParent="true"
+        style="@style/custom_style_in_layout"
         app:custom_color1="@color/orange"
         />
+    <!--
+        1
+        app:custom_color1="@color/orange"
+    -->
+
 </RelativeLayout>

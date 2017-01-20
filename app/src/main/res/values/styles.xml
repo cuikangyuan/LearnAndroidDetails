@@ -17,10 +17,11 @@
 
     </style>
 
-    <!--主题中配置的style -->
+    <!-- 2 主题中配置的style -->
     <style name="custom_style_in_theme">
         <item name="custom_color1">@color/blue</item>
     </style>
+
 
     <!--直接在layout中引用的style -->
     <style name="custom_style_in_layout">
