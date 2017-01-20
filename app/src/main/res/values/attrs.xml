@@ -28,12 +28,5 @@
     <!--定义Theme中可配置style -->
     <attr name="custom_style" format="reference"></attr>
 
-    <!--定义默认style -->
-    <style name="default_style">
-        <item name="custom_color1">@color/red</item>
-        <!--
-        <item name="custom_color2">@color/green</item>
-        <item name="custom_color3">@color/blue</item>
-        -->
-    </style>
+
 </resources>
