@@ -10,7 +10,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <item name="custom_style"></item>
+        <item name="custom_style">@style/custom_style_in_theme</item>
         <!-- 直接在主题中指定 -->
         <item name="custom_color1">@color/green</item>
 
