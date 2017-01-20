@@ -15,4 +15,25 @@
         <attr name="textSize" format="dimension"/>
         <attr name="textContent" format="string"/>
     </declare-styleable>
+
+    <!--定义属性-->
+    <declare-styleable name="custom_attrs">
+        <attr name="custom_color1" format="color"/>
+        <!--
+        <attr name="custom_color2" format="color"/>
+        <attr name="custom_color3" format="color"/>
+        -->
+    </declare-styleable>
+
+    <!--定义Theme中可配置style -->
+    <attr name="custom_style" format="reference"></attr>
+
+    <!--定义默认style -->
+    <style name="default_style">
+        <item name="custom_color1">@color/red</item>
+        <!--
+        <item name="custom_color2">@color/green</item>
+        <item name="custom_color3">@color/blue</item>
+        -->
+    </style>
 </resources>

@@ -9,8 +9,23 @@
         <item name="android:windowActionBar">false</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="custom_style"></item>
+        <!-- 直接在主题中指定 -->
+        <item name="custom_color1">@color/green</item>
+
+
     </style>
-    
+
+    <!--主题中配置的style -->
+    <style name="custom_style_in_theme">
+        <item name="custom_color1">@color/blue</item>
+    </style>
+
+    <!--直接在layout中引用的style -->
+    <style name="custom_style_in_layout">
+        <item name="custom_color1">@color/aqua</item>
+    </style>
     <style name="myToggle" parent="@android:style/Widget.CompoundButton">
         <item name="android:button">@drawable/toggle_show_password</item>
     </style>
