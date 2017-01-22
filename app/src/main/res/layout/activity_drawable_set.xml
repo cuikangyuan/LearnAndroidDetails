@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cky.learnandroiddetails.drawableSet.DrawableSetActivity">
 
-
+<!--
     <TextView
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
@@ -18,4 +18,10 @@
         android:text="加虚线描边矩形"
         android:textSize="16dp"
         android:background="@drawable/bg_rectangle_with_stroke_dash"/>
+        -->
+    <ProgressBar
+        android:layout_centerInParent="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:indeterminateDrawable="@drawable/bg_ring"/>
 </RelativeLayout>
