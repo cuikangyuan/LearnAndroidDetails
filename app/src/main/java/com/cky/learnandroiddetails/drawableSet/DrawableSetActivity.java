@@ -3,6 +3,8 @@ package com.cky.learnandroiddetails.drawableSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.cky.learnandroiddetails.R;
+
 public class DrawableSetActivity extends AppCompatActivity {
 
     @Override

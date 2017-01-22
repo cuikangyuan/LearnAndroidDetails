@@ -74,14 +74,14 @@
         <activity android:name=".canvas.CanvasViewAct" />
         <activity android:name=".recyclerViewDecoration.AddRecyclerViewDecorationAct" />
         <activity android:name=".actsince20161017.BottomDialogExampleAct" />
-        <activity android:name=".actsince20161017.ExampleAct"></activity>
-        <activity android:name=".webviewandh5.WebViewAndH5"></activity>
-        <activity android:name=".AndFix.MainActivity"></activity>
+        <activity android:name=".actsince20161017.ExampleAct" />
+        <activity android:name=".webviewandh5.WebViewAndH5" />
+        <activity android:name=".AndFix.MainActivity" />
         <activity
             android:name=".TransparentActivity.MainActivity"
-            android:theme="@style/Theme.Transparent"></activity>
-        <activity android:name=".TimePickerWithSecond.MainActivity"></activity>
-        <activity android:name=".TimePickerWithSecond.wheel.MainActivity"></activity>
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".TimePickerWithSecond.MainActivity" />
+        <activity android:name=".TimePickerWithSecond.wheel.MainActivity" />
         <activity android:name=".TimePickerWithSeconds.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -89,7 +89,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".customattrs.MyCustomViewAct"></activity>
+        <activity android:name=".customattrs.MyCustomViewAct" />
+        <activity android:name=".drawableSet.DrawableSetActivity"></activity>
     </application>
 
 </manifest>
