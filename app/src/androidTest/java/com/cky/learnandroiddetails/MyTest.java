@@ -5,6 +5,8 @@ import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.canvas.CanvasViewAct;
+import com.cky.learnandroiddetails.customattrs.MyCustomViewAct;
+import com.cky.learnandroiddetails.drawableSet.DrawableSetActivity;
 import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorationAct;
 
 /**
@@ -14,12 +16,12 @@ import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorat
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<AddRecyclerViewDecorationAct> {
+public class MyTest extends ActivityInstrumentationTestCase2<DrawableSetActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(AddRecyclerViewDecorationAct.class);
+        super(DrawableSetActivity.class);
     }
 
     @Override

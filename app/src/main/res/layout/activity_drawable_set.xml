@@ -4,10 +4,6 @@
     android:id="@+id/activity_drawable_set"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cky.learnandroiddetails.drawableSet.DrawableSetActivity">
 
 <!--
@@ -18,10 +14,52 @@
         android:text="加虚线描边矩形"
         android:textSize="16dp"
         android:background="@drawable/bg_rectangle_with_stroke_dash"/>
-        -->
+
     <ProgressBar
         android:layout_centerInParent="true"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:indeterminateDrawable="@drawable/bg_ring"/>
+-->
+
+    <!--
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:button="@null"
+            android:checked="true"
+            android:id="@+id/radio_button_1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="按钮1"
+            android:background="@drawable/bg_radio_group_selector"/>
+
+
+        <RadioButton
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:button="@null"
+            android:gravity="center"
+            android:id="@+id/radio_button_2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="按钮2"
+            android:background="@drawable/bg_radio_group_selector"/>
+
+    </RadioGroup>
+    -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imge_layer_list"/>
 </RelativeLayout>
