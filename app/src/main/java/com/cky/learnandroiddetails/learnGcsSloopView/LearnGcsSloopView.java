@@ -93,10 +93,25 @@ public class LearnGcsSloopView extends View {
         */
 
         //绘制圆弧(正圆圆弧)
+        /*
         RectF rectF = new RectF(100, 100, 500, 500);
         mPaint.setColor(Color.GRAY);
         canvas.drawRect(rectF, mPaint);
         mPaint.setColor(Color.MAGENTA);
         canvas.drawArc(rectF, 0, 90, false, mPaint);
+        */
+
+        mPaint.setColor(Color.MAGENTA);
+        mPaint.setStrokeWidth(20);
+
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawCircle(300, 200, 100, mPaint);
+
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.drawCircle(300, 500, 100, mPaint);
+
+        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+        canvas.drawCircle(300, 800, 100, mPaint);
+
     }
 }

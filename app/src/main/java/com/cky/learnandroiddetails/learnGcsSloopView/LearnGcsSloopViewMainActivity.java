@@ -8,15 +8,33 @@ import android.os.Bundle;
 
 import com.cky.learnandroiddetails.R;
 
+import java.util.ArrayList;
+
 public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
+
+    PieView mPieView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_gcs_sloop_view_main);
 
-        initCanvas();
+        //initCanvas();
+        initView();
+    }
 
+    private void initView() {
+        mPieView = (PieView) findViewById(R.id.pie_view);
+
+        ArrayList<PieData> data = new ArrayList();
+
+        for (int i = 1; i <= 5; i++) {
+            PieData pieData = new PieData();
+            pieData.setmValue(i * (i + 9));
+            data.add(pieData);
+        }
+
+        mPieView.setData(data);
     }
 
     //定义颜色
