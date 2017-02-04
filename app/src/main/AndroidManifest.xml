@@ -90,7 +90,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".customattrs.MyCustomViewAct" />
-        <activity android:name=".drawableSet.DrawableSetActivity"></activity>
+        <activity android:name=".drawableSet.DrawableSetActivity" />
+        <activity android:name=".learnGcsSloopView.LearnGcsSloopViewMainActivity"></activity>
     </application>
 
 </manifest>
