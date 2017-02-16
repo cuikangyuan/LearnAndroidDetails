@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cky.learnandroiddetails">
+          package="com.cky.learnandroiddetails">
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MyApplication"
@@ -28,70 +28,72 @@
         <service
             android:name=".MyService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
         <service
             android:name=".MyIntentService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
         <service
             android:name=".LongRunningService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"/>
 
-        <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".AlarmReceiver"/>
 
         <service
             android:name=".RemoteService"
             android:enabled="true"
             android:exported="true"
-            android:process=":remote" />
+            android:process=":remote"/>
 
-        <activity android:name=".TestLayoutActivity" />
-        <activity android:name=".TestImageViewActivity" />
-        <activity android:name=".TestDispatchEventActivity" />
-        <activity android:name=".TestViewGroupEventActivity" />
-        <activity android:name=".TestTipActivity" />
-        <activity android:name=".TestNotificationActivity" />
-        <activity android:name=".MVP.LoginActivity" />
-        <activity android:name=".TestScrollerActivity" />
-        <activity android:name=".TestScrollerActivity2" />
-        <activity android:name=".TestInterceptActivity" />
-        <activity android:name=".TestDashedViewAct" />
-        <activity android:name=".TestRefreshListViewAct" />
-        <activity android:name=".TestViewAct" />
-        <activity android:name=".TestEditTextAct" />
-        <activity android:name=".TestScanCode" />
-        <activity android:name=".TestWidgetAct" />
-        <activity android:name=".TestCounterAct" />
-        <activity android:name=".TestWebViewAct" />
-        <activity android:name=".TestCouponDisplayWidgetAct" />
-        <activity android:name=".TestImmersiveModeAct" />
-        <activity android:name=".TestViewPagerWithoutFragmentAct" />
-        <activity android:name=".TestGridAct" />
-        <activity android:name=".TestDynamicSelectorAct" />
-        <activity android:name=".UnitTestExample.TestUnitTestAct" />
-        <activity android:name=".HotFix.HotFixClassLoaderAct" />
-        <activity android:name=".canvas.CanvasViewAct" />
-        <activity android:name=".recyclerViewDecoration.AddRecyclerViewDecorationAct" />
-        <activity android:name=".actsince20161017.BottomDialogExampleAct" />
-        <activity android:name=".actsince20161017.ExampleAct" />
-        <activity android:name=".webviewandh5.WebViewAndH5" />
-        <activity android:name=".AndFix.MainActivity" />
+        <activity android:name=".TestLayoutActivity"/>
+        <activity android:name=".TestImageViewActivity"/>
+        <activity android:name=".TestDispatchEventActivity"/>
+        <activity android:name=".TestViewGroupEventActivity"/>
+        <activity android:name=".TestTipActivity"/>
+        <activity android:name=".TestNotificationActivity"/>
+        <activity android:name=".MVP.LoginActivity"/>
+        <activity android:name=".TestScrollerActivity"/>
+        <activity android:name=".TestScrollerActivity2"/>
+        <activity android:name=".TestInterceptActivity"/>
+        <activity android:name=".TestDashedViewAct"/>
+        <activity android:name=".TestRefreshListViewAct"/>
+        <activity android:name=".TestViewAct"/>
+        <activity android:name=".TestEditTextAct"/>
+        <activity android:name=".TestScanCode"/>
+        <activity android:name=".TestWidgetAct"/>
+        <activity android:name=".TestCounterAct"/>
+        <activity android:name=".TestWebViewAct"/>
+        <activity android:name=".TestCouponDisplayWidgetAct"/>
+        <activity android:name=".TestImmersiveModeAct"/>
+        <activity android:name=".TestViewPagerWithoutFragmentAct"/>
+        <activity android:name=".TestGridAct"/>
+        <activity android:name=".TestDynamicSelectorAct"/>
+        <activity android:name=".UnitTestExample.TestUnitTestAct"/>
+        <activity android:name=".HotFix.HotFixClassLoaderAct"/>
+        <activity android:name=".canvas.CanvasViewAct"/>
+        <activity android:name=".recyclerViewDecoration.AddRecyclerViewDecorationAct"/>
+        <activity android:name=".actsince20161017.BottomDialogExampleAct"/>
+        <activity android:name=".actsince20161017.ExampleAct"/>
+        <activity android:name=".webviewandh5.WebViewAndH5"/>
+        <activity android:name=".AndFix.MainActivity"/>
         <activity
             android:name=".TransparentActivity.MainActivity"
-            android:theme="@style/Theme.Transparent" />
-        <activity android:name=".TimePickerWithSecond.MainActivity" />
-        <activity android:name=".TimePickerWithSecond.wheel.MainActivity" />
+            android:theme="@style/Theme.Transparent"/>
+        <activity android:name=".TimePickerWithSecond.MainActivity"/>
+        <activity android:name=".TimePickerWithSecond.wheel.MainActivity"/>
         <activity android:name=".TimePickerWithSeconds.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".customattrs.MyCustomViewAct" />
-        <activity android:name=".drawableSet.DrawableSetActivity" />
-        <activity android:name=".learnGcsSloopView.LearnGcsSloopViewMainActivity"></activity>
+        <activity android:name=".customattrs.MyCustomViewAct"/>
+        <activity android:name=".drawableSet.DrawableSetActivity"/>
+        <activity android:name=".learnGcsSloopView.LearnGcsSloopViewMainActivity"/>
+        <activity android:name=".ViewScreenShot.VIewScreenShotMainActivity">
+        </activity>
     </application>
 
 </manifest>

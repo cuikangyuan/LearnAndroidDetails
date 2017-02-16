@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.cky.learnandroiddetails.ViewScreenShot.VIewScreenShotMainActivity;
 import com.cky.learnandroiddetails.canvas.CanvasViewAct;
 import com.cky.learnandroiddetails.customattrs.MyCustomViewAct;
 import com.cky.learnandroiddetails.drawableSet.DrawableSetActivity;
@@ -17,12 +18,12 @@ import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorat
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<VIewScreenShotMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(LearnGcsSloopViewMainActivity.class);
+        super(VIewScreenShotMainActivity.class);
     }
 
     @Override
