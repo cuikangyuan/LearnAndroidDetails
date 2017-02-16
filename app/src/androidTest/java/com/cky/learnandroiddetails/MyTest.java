@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.cky.learnandroiddetails.SKUChoose.SkuChooseMainActivity;
 import com.cky.learnandroiddetails.ViewScreenShot.VIewScreenShotMainActivity;
 import com.cky.learnandroiddetails.canvas.CanvasViewAct;
 import com.cky.learnandroiddetails.customattrs.MyCustomViewAct;
@@ -18,12 +19,12 @@ import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorat
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<VIewScreenShotMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<SkuChooseMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(VIewScreenShotMainActivity.class);
+        super(SkuChooseMainActivity.class);
     }
 
     @Override

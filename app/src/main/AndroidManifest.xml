@@ -94,6 +94,8 @@
         <activity android:name=".learnGcsSloopView.LearnGcsSloopViewMainActivity"/>
         <activity android:name=".ViewScreenShot.VIewScreenShotMainActivity">
         </activity>
+        <activity android:name=".SKUChoose.SkuChooseMainActivity">
+        </activity>
     </application>
 
 </manifest>
