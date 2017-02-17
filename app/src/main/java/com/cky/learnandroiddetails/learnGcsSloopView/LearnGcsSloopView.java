@@ -19,8 +19,8 @@ public class LearnGcsSloopView extends View {
 
     private void initPaint() {
         mPaint.setColor(Color.BLUE);
-        mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setStrokeWidth(1f);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(5f);
     }
 
     public LearnGcsSloopView(Context context) {
@@ -100,7 +100,7 @@ public class LearnGcsSloopView extends View {
         mPaint.setColor(Color.MAGENTA);
         canvas.drawArc(rectF, 0, 90, false, mPaint);
         */
-
+        /*
         mPaint.setColor(Color.MAGENTA);
         mPaint.setStrokeWidth(20);
 
@@ -112,6 +112,90 @@ public class LearnGcsSloopView extends View {
 
         mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawCircle(300, 800, 100, mPaint);
+        */
+        //画布位移
+        /*
+        mPaint.setColor(Color.BLACK);
+        canvas.translate(200, 200);
+        canvas.drawCircle(0, 0, 100, mPaint);
 
+        mPaint.setColor(Color.BLUE);
+        canvas.translate(200, 200);
+        canvas.drawCircle(0, 0, 100, mPaint);
+        */
+        //画布缩放 缩放中心在坐标原点
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        RectF rectF = new RectF(0, -400, 400, 0);
+
+        mPaint.setColor(Color.BLACK);
+        canvas.drawRect(rectF, mPaint);
+
+        canvas.scale(0.5f, 0.5f);
+
+        mPaint.setColor(Color.BLUE);
+        canvas.drawRect(rectF, mPaint);
+        */
+
+        //画布缩放 并修改缩放中心
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        RectF rectF = new RectF(0, -400, 400, 0);
+
+        mPaint.setColor(Color.BLACK);
+        canvas.drawRect(rectF, mPaint);
+
+        //缩放中心向右移动200
+        canvas.scale(0.5f, 0.5f, 200, 0);
+
+        mPaint.setColor(Color.BLUE);
+        canvas.drawRect(rectF, mPaint);
+        */
+
+        //画布缩放 并 翻折 缩放轴 就是中心轴 此种情况下 就是 x轴 和 y轴
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        RectF rectF = new RectF(0, -400, 400, 0);
+
+        mPaint.setColor(Color.BLACK);
+        canvas.drawRect(rectF, mPaint);
+
+        //缩放中心向右移动200
+        canvas.scale(-0.5f, -0.5f);
+
+        mPaint.setColor(Color.BLUE);
+        canvas.drawRect(rectF, mPaint);
+        */
+
+        //画布缩放 并 翻折 缩放轴 就是中心轴 此种情况下(缩放中心向右移动200)
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        RectF rectF = new RectF(0, -400, 400, 0);
+
+        mPaint.setColor(Color.BLACK);
+        canvas.drawRect(rectF, mPaint);
+
+        //缩放中心向右移动200
+        canvas.scale(-0.5f, -0.5f, 200, 0);
+
+        mPaint.setColor(Color.BLUE);
+        canvas.drawRect(rectF, mPaint);
+        */
+
+        //缩放的叠加
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        RectF rectF = new RectF(-400, -400, 400, 400);
+
+        for (int i = 0; i <= 20; i++) {
+            canvas.scale(0.9f, 0.9f);
+            canvas.drawRect(rectF, mPaint);
+        }
+        */
     }
 }

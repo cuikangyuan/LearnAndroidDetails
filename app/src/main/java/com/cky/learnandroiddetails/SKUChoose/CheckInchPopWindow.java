@@ -113,6 +113,7 @@ public class CheckInchPopWindow implements PopupWindow.OnDismissListener, View.O
         ok_tv.setOnClickListener(this);
         pop_num.addTextChangedListener(this);
 
+        //新建弹窗
         popupWindow = new PopupWindow(view, LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
         popupWindow.setAnimationStyle(R.style.popWindow_anim_style);

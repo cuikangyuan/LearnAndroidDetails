@@ -20,10 +20,11 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_learn_gcs_sloop_view_main);
 
         //initCanvas();
-        initView();
+        //initView();
     }
 
     private void initView() {
+        /*
         mPieView = (PieView) findViewById(R.id.pie_view);
 
         ArrayList<PieData> data = new ArrayList();
@@ -35,6 +36,7 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
         }
 
         mPieView.setData(data);
+        */
     }
 
     //定义颜色

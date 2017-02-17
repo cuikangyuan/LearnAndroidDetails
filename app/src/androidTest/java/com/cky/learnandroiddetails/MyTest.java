@@ -19,12 +19,12 @@ import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorat
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<SkuChooseMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(SkuChooseMainActivity.class);
+        super(LearnGcsSloopViewMainActivity.class);
     }
 
     @Override
