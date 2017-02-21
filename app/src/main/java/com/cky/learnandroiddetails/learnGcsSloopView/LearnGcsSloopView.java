@@ -1,13 +1,22 @@
 package com.cky.learnandroiddetails.learnGcsSloopView;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Picture;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.PictureDrawable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.cky.learnandroiddetails.R;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by cuikangyuan on 2017/2/4.
@@ -16,6 +25,10 @@ import android.view.View;
 public class LearnGcsSloopView extends View {
 
     private Paint mPaint = new Paint();
+
+    private Picture mPicture = new Picture();
+
+    private Context mContext;
 
     private void initPaint() {
         mPaint.setColor(Color.BLUE);
@@ -34,7 +47,24 @@ public class LearnGcsSloopView extends View {
     public LearnGcsSloopView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
+        mContext = context;
+
         initPaint();
+
+        recording();
+    }
+
+    private void recording() {
+        Canvas canvas = mPicture.beginRecording(500, 500);
+
+        Paint paint = new Paint();
+        paint.setColor(Color.BLUE);
+        paint.setStyle(Paint.Style.FILL);
+
+        canvas.translate(250, 250);
+        canvas.drawCircle(0, 0, 100, paint);
+
+        mPicture.endRecording();
     }
 
     @Override
@@ -242,6 +272,7 @@ public class LearnGcsSloopView extends View {
         //Y = y + sy * x
         //(0, -200) -> (-200, -200)
         //(200, 0) -> (200, 0)
+        /*
         canvas.translate(getWidth() / 2, getHeight() / 2);
         RectF rectF = new RectF(0, -200, 200,0);
         mPaint.setColor(Color.BLACK);
@@ -250,5 +281,42 @@ public class LearnGcsSloopView extends View {
         canvas.skew(1, 0);
         mPaint.setColor(Color.BLUE);
         canvas.drawRect(rectF, mPaint);
+        */
+
+        //Picture
+        //mPicture.draw(canvas);//1.在一些低版本的系统上绘制后可能会影响Canvas的状态
+
+        //2.绘制后不会影响Canvas的状态 如果绘制的内容比选区大，会进行相应的缩放
+        //canvas.drawPicture(mPicture, new RectF(0, 0, 100, mPicture.getHeight()));
+
+        //3.包装成PictureDrawable 绘制
+        /*
+        PictureDrawable pictureDrawable = new PictureDrawable(mPicture);
+        //绘制的内容比选区大 不会缩放 会直接不显示
+        pictureDrawable.setBounds(0, 0, 300, mPicture.getHeight());
+        pictureDrawable.draw(canvas);
+        */
+
+        //Bitmap
+        //BitmapFactory 从不同位置获取Bitmap
+        Bitmap bitmap = null;
+        //res 文件夹
+        bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.chinese_400x300);
+        //assets 文件夹
+        try {
+            InputStream inputStream = mContext.getAssets().open("chinese_400x300.png");
+            bitmap = BitmapFactory.decodeStream(inputStream);
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //sd card file
+        bitmap = BitmapFactory.decodeFile("/sdcard/bitmap.png");
+
+        //network file
+        /*
+        bitmap = BitmapFactory.decodeStream(inputStream);
+        inputStream.close();
+        */
     }
 }

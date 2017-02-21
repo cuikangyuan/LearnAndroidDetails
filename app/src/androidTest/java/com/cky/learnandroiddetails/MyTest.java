@@ -11,6 +11,7 @@ import com.cky.learnandroiddetails.customattrs.MyCustomViewAct;
 import com.cky.learnandroiddetails.drawableSet.DrawableSetActivity;
 import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivity;
 import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorationAct;
+import com.cky.learnandroiddetails.valueAnimForPayBarCode.DialogHeightChangeWithAnimMainActivity;
 
 /**
  * 作者：cky
@@ -19,12 +20,12 @@ import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorat
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<DialogHeightChangeWithAnimMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(LearnGcsSloopViewMainActivity.class);
+        super(DialogHeightChangeWithAnimMainActivity.class);
     }
 
     @Override

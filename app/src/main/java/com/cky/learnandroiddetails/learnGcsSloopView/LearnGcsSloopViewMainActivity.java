@@ -2,6 +2,8 @@ package com.cky.learnandroiddetails.learnGcsSloopView;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Picture;
 import android.support.annotation.ColorRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +16,8 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
 
     PieView mPieView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +25,8 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
 
         //initCanvas();
         //initView();
+
+
     }
 
     private void initView() {
@@ -56,5 +62,6 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
         //Canvas canvas = new Canvas();
         //canvas.drawColor(Color.BLUE);
     }
+
 
 }
