@@ -197,5 +197,58 @@ public class LearnGcsSloopView extends View {
             canvas.drawRect(rectF, mPaint);
         }
         */
+
+        //Rotate操作 默认旋转中心为原点
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        RectF rectF = new RectF(0, -400, 400, 0);
+
+        mPaint.setColor(Color.BLACK);
+        canvas.drawRect(rectF, mPaint);
+
+        canvas.rotate(180);
+
+        mPaint.setColor(Color.BLUE);
+        canvas.drawRect(rectF, mPaint);
+        */
+
+        //Rotate操作 默认旋转中心向右偏移200 旋转角度也是可以叠加的
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        RectF rectF = new RectF(0, -400, 400, 0);
+
+        mPaint.setColor(Color.BLACK);
+        canvas.drawRect(rectF, mPaint);
+
+        canvas.rotate(180, 200, 0);
+
+        mPaint.setColor(Color.BLUE);
+        canvas.drawRect(rectF, mPaint);
+        */
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawCircle(0, 0, 400, mPaint);
+        canvas.drawCircle(0, 0, 380, mPaint);
+
+        for (int i = 10; i <= 360; i++) {
+            canvas.drawLine(0, 380, 0, 400, mPaint);
+            canvas.rotate(10);
+        }
+        */
+
+        //错切
+        //X = x + sx * y
+        //Y = y + sy * x
+        //(0, -200) -> (-200, -200)
+        //(200, 0) -> (200, 0)
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        RectF rectF = new RectF(0, -200, 200,0);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawRect(rectF, mPaint);
+
+        canvas.skew(1, 0);
+        mPaint.setColor(Color.BLUE);
+        canvas.drawRect(rectF, mPaint);
     }
 }
