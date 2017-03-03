@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Picture;
 import android.graphics.Rect;
@@ -303,6 +304,7 @@ public class LearnGcsSloopView extends View {
         //res 文件夹
         bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.chinese_400x300);
         //assets 文件夹
+        /*
         try {
             InputStream inputStream = mContext.getAssets().open("chinese_400x300.png");
             bitmap = BitmapFactory.decodeStream(inputStream);
@@ -310,13 +312,49 @@ public class LearnGcsSloopView extends View {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
         //sd card file
-        bitmap = BitmapFactory.decodeFile("/sdcard/bitmap.png");
+        //bitmap = BitmapFactory.decodeFile("/sdcard/bitmap.png");
 
         //network file
         /*
         bitmap = BitmapFactory.decodeStream(inputStream);
         inputStream.close();
         */
+
+        //1.绘制Bitmap 图片左上角默认和坐标原点重合
+        //canvas.drawBitmap(bitmap, new Matrix(), new Paint());
+        //2.设置绘制时 图片左上角 距离坐标原点的 距离
+        //canvas.drawBitmap(bitmap, 100, 200, new Paint());
+        //3.指定图片的绘制区域，指定图片在屏幕中的显示区域 图片宽高会根据显示区域自动缩放
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Rect src = new Rect(0, 0, bitmap.getWidth() / 2, bitmap.getHeight() / 2);
+        Rect dest = new Rect(0, 0, 200, 200);
+        canvas.drawBitmap(bitmap, src, dest, null);
+        */
+        //绘制文字 使用文本画笔 绘制文字
+        Paint textPaint = new Paint();
+        textPaint.setColor(Color.BLACK);
+        textPaint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(50);
+
+        String str = "ABCDEFGHIJK";
+        //1
+        //参数分别为：文本，基线x，基线y， 画笔
+        //canvas.drawText(str, 200, 500, textPaint);
+        //截取指定位置，左闭右开
+        //canvas.drawText(str, 1, 3, 200, 500, textPaint);s
+        //2 指定每一个字符的位置
+        str = "SLOOP";
+        canvas.drawPosText(str,
+                new float[] {
+                        100, 100,
+                        200, 200,
+                        300, 300,
+                        400, 400,
+                        500, 500
+                },
+                textPaint);
     }
 }
