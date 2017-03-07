@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Picture;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -334,18 +335,21 @@ public class LearnGcsSloopView extends View {
         canvas.drawBitmap(bitmap, src, dest, null);
         */
         //绘制文字 使用文本画笔 绘制文字
+        /*
         Paint textPaint = new Paint();
         textPaint.setColor(Color.BLACK);
         textPaint.setStyle(Paint.Style.FILL);
         textPaint.setTextSize(50);
 
         String str = "ABCDEFGHIJK";
+        */
         //1
         //参数分别为：文本，基线x，基线y， 画笔
         //canvas.drawText(str, 200, 500, textPaint);
         //截取指定位置，左闭右开
         //canvas.drawText(str, 1, 3, 200, 500, textPaint);s
         //2 指定每一个字符的位置
+        /*
         str = "SLOOP";
         canvas.drawPosText(str,
                 new float[] {
@@ -356,5 +360,109 @@ public class LearnGcsSloopView extends View {
                         500, 500
                 },
                 textPaint);
+        */
+
+        //Path -> 几何路径
+        Paint pathPaint = new Paint();
+        pathPaint.setColor(Color.BLACK);
+        pathPaint.setStyle(Paint.Style.STROKE);
+        pathPaint.setStrokeWidth(10);
+
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        Path path = new Path();
+        path.lineTo(200, 200);
+        path.lineTo(200, 0);
+
+        canvas.drawPath(path, pathPaint);
+        */
+        //第一类 Path
+        //1.LineTo
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        Path path = new Path();
+        path.lineTo(200, 200);
+
+        path.moveTo(200, 100);//移动下一次操作的起点位置 不影响之前的操作，影响之后的操作
+        path.lineTo(200, 0);
+
+        canvas.drawPath(path, pathPaint);
+        */
+        //2.setLastPoint
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        Path path = new Path();
+        path.lineTo(200, 200);
+
+        path.setLastPoint(200, 100);//重置上一次操作的最后一个点
+        path.lineTo(200, 0);//(200, 100) 到 (200, 0) 的连线
+
+        canvas.drawPath(path, pathPaint);
+        */
+        //3.close
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        Path path = new Path();
+        path.lineTo(200, 200);
+        path.lineTo(200, 0);
+
+        path.close();//连接当前最后一个点和最初的一个点
+
+        canvas.drawPath(path, pathPaint);
+        */
+        //path添加图形
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        Path path = new Path();
+
+        //CW 顺时针 记录矩形的每一个点
+        //CCW 逆时针 记录矩形的每一个点
+        //path.addRect(-200, -200, 200, 200, Path.Direction.CW);
+        path.addRect(-200, -200, 200, 200, Path.Direction.CCW);
+        path.setLastPoint(-300, 300);
+        canvas.drawPath(path, pathPaint);
+        */
+
+        /*
+        //第二类Path
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        canvas.scale(1, -1); // 翻转y坐标轴
+        Path path = new Path();
+        Path src = new Path();
+
+        //CW 顺时针 记录矩形的每一个点
+        //CCW 逆时针 记录矩形的每一个点
+        path.addRect(-200, -200, 200, 200, Path.Direction.CW);
+        src.addCircle(0, 0, 100, Path.Direction.CW);
+
+        //path.addPath(src); // 路径合并
+        path.addPath(src, 0, 100);//位移后 路径合并
+        canvas.drawPath(path, pathPaint);
+        */
+
+        //第三类 Path (addArc  arcTo)
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        canvas.scale(1, -1);
+
+        Path path = new Path();
+        path.lineTo(100, 100);
+
+        RectF oval = new RectF(0, 0, 300, 300);
+
+        //等价的一组
+        //path.addArc(oval, 0, 270);
+        //不连接圆弧起点和最后一个点
+        //path.arcTo(oval, 0, 200, true);
+
+        //等价的一组
+        //path.arcTo(oval, 0, 200);
+        path.arcTo(oval, 0, 270, false);
+        canvas.drawPath(path, pathPaint);
     }
 }
