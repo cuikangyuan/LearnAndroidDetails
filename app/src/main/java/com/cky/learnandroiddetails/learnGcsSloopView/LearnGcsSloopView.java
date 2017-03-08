@@ -13,6 +13,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.PictureDrawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.cky.learnandroiddetails.R;
@@ -446,6 +447,7 @@ public class LearnGcsSloopView extends View {
         */
 
         //第三类 Path (addArc  arcTo)
+        /*
         canvas.translate(getWidth() / 2, getHeight() / 2);
 
         canvas.scale(1, -1);
@@ -464,5 +466,60 @@ public class LearnGcsSloopView extends View {
         //path.arcTo(oval, 0, 200);
         path.arcTo(oval, 0, 270, false);
         canvas.drawPath(path, pathPaint);
+        */
+
+        //isEmpty isRect isConvex set offset
+        /*
+        Path path = new Path();
+        Log.d("1", path.isEmpty() + "");
+
+        path.lineTo(100, 100);
+        Log.d("2", path.isEmpty() + "");
+        */
+
+        /*
+        Path path = new Path();
+        path.lineTo(0,400);
+        path.lineTo(400,400);
+        path.lineTo(400,0);
+        path.lineTo(0,0);
+        RectF rect = new RectF();
+        boolean pathRect = path.isRect(rect);
+        Log.d("Rect","isRect:"+pathRect+"| left:"+rect.left+"| top:"+rect.top+"| right:"+rect.right+"| bottom:"+rect.bottom);
+        */
+/*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        canvas.scale(1, -1);
+
+        Path path = new Path();
+        path.addRect(-200, -200, 200, 200, Path.Direction.CW);
+
+        Path src = new Path();
+        src.addCircle(0, 0, 100, Path.Direction.CW);
+
+        path.set(src); //相当于 path = src
+
+        canvas.drawPath(path, pathPaint);
+*/
+        //offset 相当于 path执行一段位移操作
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        canvas.scale(1, -1);
+
+        Path path = new Path();
+        path.addCircle(0, 0, 100, Path.Direction.CW);
+
+        Path dst = new Path();
+        dst.addRect(-200, -200, 200, 200, Path.Direction.CW);
+
+        path.offset(300, 0, dst); // 平移后的path 保存在src中 替换掉远src 中的内容
+
+        canvas.drawPath(path, mPaint);
+
+        mPaint.setColor(Color.RED);
+
+        canvas.drawPath(dst, mPaint);
+
+        canvas.drawPath(path, pathPaint);
+
     }
 }
