@@ -502,6 +502,7 @@ public class LearnGcsSloopView extends View {
         canvas.drawPath(path, pathPaint);
 */
         //offset 相当于 path执行一段位移操作
+        /*
         canvas.translate(getWidth() / 2, getHeight() / 2);
         canvas.scale(1, -1);
 
@@ -520,6 +521,73 @@ public class LearnGcsSloopView extends View {
         canvas.drawPath(dst, mPaint);
 
         canvas.drawPath(path, pathPaint);
+        */
 
+        //相对坐标  绝对坐标
+        /*
+        Path path = new Path();
+
+        path.moveTo(100, 100);
+        //path.lineTo(100, 200);//绝对坐标
+        path.rLineTo(100, 200);//相对坐标
+
+        canvas.drawPath(path, mPaint);
+        */
+
+        //填充模式
+        //奇偶规则 非零环绕数规则
+/*
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Path path = new Path();
+        //path.setFillType(Path.FillType.INVERSE_EVEN_ODD);
+        path.setFillType(Path.FillType.EVEN_ODD);
+
+        path.addRect(-200, -200, 200, 200, Path.Direction.CW);
+        canvas.drawPath(path, mPaint);
+*/
+        /*
+        非零环绕数规则: 边从右向左穿过射线,环绕数+1, 边从左向右穿过射线,环绕数-1,最终环绕数为0,则点在外部 不为零则在内部
+
+        图形边的方向对非零奇偶环绕数规则填充结果的影响
+        */
+
+        /*
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Path path = new Path();
+        //添加小的正方形
+        path.addRect(-200, -200, 200, 200, Path.Direction.CW);
+        //path.addRect(-200, -200, 200, 200, Path.Direction.CCW);
+
+        //添加大的正方形
+        //两个方向相同时 两个形状会重叠 方向不同时 大的与小的重叠的地方会是白色的形状
+        path.addRect(-400, -400, 400, 400, Path.Direction.CCW);
+        path.setFillType(Path.FillType.WINDING);
+        canvas.drawPath(path, mPaint);
+        */
+
+        //布尔操作
+        /*
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Path path1 = new Path();
+        Path path2 = new Path();
+        Path path3 = new Path();
+        Path path4 = new Path();
+
+        path1.addCircle(0, 0, 200, Path.Direction.CW);
+        path2.addRect(0, -200, 200, 200, Path.Direction.CW);
+        path3.addCircle(0, -100, 100, Path.Direction.CW);
+        path4.addCircle(0, 100, 100, Path.Direction.CW);
+
+        path1.op(path2, Path.Op.DIFFERENCE);//差集
+        path1.op(path3, Path.Op.UNION);//并集
+        path1.op(path4, Path.Op.DIFFERENCE);
+        canvas.drawPath(path1, mPaint);
+        */
+
+        //计算边界 计算Path占用的空间和所在位置
+        canvas.translate(getWidth() / 2, getHeight() / 2);
     }
 }
