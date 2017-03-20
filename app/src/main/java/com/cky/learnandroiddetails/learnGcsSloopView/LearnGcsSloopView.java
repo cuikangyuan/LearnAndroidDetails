@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathMeasure;
 import android.graphics.Picture;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -588,6 +589,7 @@ public class LearnGcsSloopView extends View {
         */
 
         //计算边界 计算Path占用的空间和所在位置
+        /*
         canvas.translate(getWidth() / 2, getHeight() / 2);
 
         RectF rectF = new RectF();
@@ -606,9 +608,64 @@ public class LearnGcsSloopView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Color.RED);
         canvas.drawRect(rectF, mPaint);
-
+        */
         //重置路径 (fillType影响显示效果，数据结构影响重建速度)
         //reset 保留fillType  不保留原有数据结构
         //rewind 保留原有数据结构 不保留fillType
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Path path = new Path();
+
+        path.lineTo(0, 200);
+        path.lineTo(200, 200);
+        path.lineTo(200, 0);
+
+        // Path 与 PathMeasure进行关联并不会影响 Path 状态
+        PathMeasure pathMeasure1 = new PathMeasure(path, false);
+        PathMeasure pathMeasure2 = new PathMeasure(path, true);
+
+        Log.e("TAG", "forceClosed = false ----> " + pathMeasure1.getLength());
+        Log.e("TAG", "forceClosed = true ----> " + pathMeasure2.getLength());
+
+        canvas.drawPath(path, mPaint);
+        */
+        //getSegment
+        /*
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Path path = new Path();
+        path.addRect(-200, -200, 200, 200, Path.Direction.CW);
+
+        Path dst = new Path();
+        //dst中添加线段
+        dst.lineTo(-300, -300);
+        PathMeasure pathMeasure = new PathMeasure(path, false);
+        // 截取一部分存入dst中，并使用 moveTo 保持截取得到的 Path 第一个点的位置不变
+        //截取到的一部分只会添加到dst中，而不是替换
+        //如果 startWithMoveTo 为 true, 则被截取出来到Path片段保持原状，如果 startWithMoveTo 为 false，则会将截取出来的 Path 片段的起始点移动到 dst 的最后一个点，以保证 dst 的连续性
+        //pathMeasure.getSegment(200, 600, dst, true);
+        pathMeasure.getSegment(200, 600, dst, false);
+        canvas.drawPath(dst, mPaint);
+        */
+
+        //nextContour
+
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Path path = new Path();
+
+        path.addRect(-100, -100, 100, 100, Path.Direction.CW);
+        path.addRect(-200, -200, 200, 200, Path.Direction.CW);
+
+        canvas.drawPath(path, mPaint);
+
+        PathMeasure pathMeasure = new PathMeasure(path, false);
+
+        //针对当前的曲线,曲线的顺序和 path中添加的顺序相关
+        float length1 = pathMeasure.getLength();
+        pathMeasure.nextContour();
+        float length2 = pathMeasure.getLength();
+        // 输出两条路径的长度
+        Log.i("LEN","len1="+length1);
+        Log.i("LEN","len2="+length2);
+
     }
 }
