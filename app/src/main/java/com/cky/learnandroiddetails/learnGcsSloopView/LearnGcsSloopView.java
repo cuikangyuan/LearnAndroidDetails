@@ -589,5 +589,26 @@ public class LearnGcsSloopView extends View {
 
         //计算边界 计算Path占用的空间和所在位置
         canvas.translate(getWidth() / 2, getHeight() / 2);
+
+        RectF rectF = new RectF();
+
+        Path path = new Path();
+
+        path.lineTo(100, -50);
+        path.lineTo(100, 50);
+        path.close();
+
+        path.addCircle(-100, 0, 100, Path.Direction.CW);
+
+        path.computeBounds(rectF, true);
+        canvas.drawPath(path, mPaint);
+
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setColor(Color.RED);
+        canvas.drawRect(rectF, mPaint);
+
+        //重置路径 (fillType影响显示效果，数据结构影响重建速度)
+        //reset 保留fillType  不保留原有数据结构
+        //rewind 保留原有数据结构 不保留fillType
     }
 }
