@@ -19,8 +19,6 @@ import android.view.View;
 
 import com.cky.learnandroiddetails.R;
 
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * Created by cuikangyuan on 2017/2/4.
@@ -34,10 +32,27 @@ public class LearnGcsSloopView extends View {
 
     private Context mContext;
 
+    private float currentValue = 0;
+    private float[] pos;
+    private float[] tan;
+    private Bitmap mBitmap;
+    private Matrix mMatrix;
+
     private void initPaint() {
         mPaint.setColor(Color.BLUE);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(5f);
+    }
+
+    private void initData() {
+        pos = new float[2];
+        tan = new float[2];
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 2;
+        mBitmap = BitmapFactory.decodeResource(mContext.getResources(),
+                R.mipmap.arrow2, options);
+        mMatrix = new Matrix();
     }
 
     public LearnGcsSloopView(Context context) {
@@ -56,6 +71,8 @@ public class LearnGcsSloopView extends View {
         initPaint();
 
         recording();
+
+        initData();
     }
 
     private void recording() {
@@ -648,7 +665,7 @@ public class LearnGcsSloopView extends View {
         */
 
         //nextContour
-
+        /*
         canvas.translate(getWidth() / 2, getHeight() / 2);
         Path path = new Path();
 
@@ -666,6 +683,29 @@ public class LearnGcsSloopView extends View {
         // 输出两条路径的长度
         Log.i("LEN","len1="+length1);
         Log.i("LEN","len2="+length2);
+        */
 
+        //箭头绕圆旋转
+        canvas.translate(getWidth() / 2, getHeight() / 2);
+        Path path = new Path();
+        path.addCircle(0, 0, 200, Path.Direction.CW);
+
+        PathMeasure pathMeasure = new PathMeasure(path, false);
+
+        currentValue += 0.005;
+        if (currentValue >= 1) {
+            currentValue = 0;
+        }
+
+        pathMeasure.getPosTan(pathMeasure.getLength() * currentValue, pos, tan);
+
+        mMatrix.reset();
+        float degrees = (float) (Math.atan2(tan[1], tan[0]) * 180.0 / Math.PI);
+
+        mMatrix.postRotate(degrees, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
+        mMatrix.postTranslate(pos[0] - mBitmap.getWidth() / 2, pos[1] - mBitmap.getHeight() / 2);
+        canvas.drawPath(path, mPaint);
+        canvas.drawBitmap(mBitmap, mMatrix, mPaint);
+        invalidate();
     }
 }
