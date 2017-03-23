@@ -101,6 +101,8 @@
         </activity>
         <activity android:name=".PathTest.LearnPathMainActivity">
         </activity>
+        <activity android:name=".SpannableStringLearn.SpannableStringMainActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -29,4 +29,13 @@
     <attr name="custom_style" format="reference"></attr>
 
 
+    <!-- 纯色背景按钮-->
+    <declare-styleable name="SolidButton">
+        <attr name="normalBgColor" format="color" />
+        <attr name="touchedBgColor" format="color" />
+        <attr name="unavailableBgColor" format="color" />
+        <attr name="solidButtonCornerRadius" format="dimension" />
+    </declare-styleable>
+
+
 </resources>

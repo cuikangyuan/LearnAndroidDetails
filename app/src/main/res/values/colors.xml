@@ -148,4 +148,7 @@
     <color name="gray_8f">#8f8f8f</color><!--灰色8f -->
 
     <color name="buy_now">#EF5D8F</color>
+    <color name="solid_button_normal_bg_color">#2eb252</color>
+    <color name="solid_button_touched_bg_color">#000000</color>
+    <color name="solid_button_disable_bg_color">#cccccc</color>
 </resources>
