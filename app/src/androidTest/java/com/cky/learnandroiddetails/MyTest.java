@@ -22,12 +22,12 @@ import com.cky.learnandroiddetails.valueAnimForPayBarCode.DialogHeightChangeWith
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<SpannableStringMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(SpannableStringMainActivity.class);
+        super(LearnGcsSloopViewMainActivity.class);
     }
 
     @Override

@@ -38,4 +38,9 @@
     </declare-styleable>
 
 
+    <declare-styleable name="BezierLoadingView">
+        <attr name="loadingradius" format="dimension"/>
+        <attr name="loadingcolor" format="color"/>
+        <attr name="loadingduration" format="integer"/>
+    </declare-styleable>
 </resources>
