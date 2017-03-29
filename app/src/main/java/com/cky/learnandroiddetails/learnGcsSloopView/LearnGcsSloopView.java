@@ -19,6 +19,8 @@ import android.view.View;
 
 import com.cky.learnandroiddetails.R;
 
+import java.util.Arrays;
+
 
 /**
  * Created by cuikangyuan on 2017/2/4.
@@ -686,6 +688,7 @@ public class LearnGcsSloopView extends View {
         */
 
         //箭头绕圆旋转
+        /*
         canvas.translate(getWidth() / 2, getHeight() / 2);
         Path path = new Path();
         path.addCircle(0, 0, 200, Path.Direction.CW);
@@ -707,5 +710,24 @@ public class LearnGcsSloopView extends View {
         canvas.drawPath(path, mPaint);
         canvas.drawBitmap(mBitmap, mMatrix, mPaint);
         invalidate();
+        */
+
+        //Matrix 数值计算
+        float[] src = new float[] {0, 0, 80, 100, 400, 300};
+        float[] dst = new float[6];
+
+        Matrix matrix = new Matrix();
+        matrix.setScale(0.5f, 1f);
+
+        Log.i("Matrix", "src before :" + Arrays.toString(src));
+        Log.i("Matrix", "dst before :" + Arrays.toString(dst));
+
+        matrix.mapPoints(src);
+        //matrix.mapPoints(pts, dst);
+        // 调用map方法计算(最后一个2表示两个点，即四个数值,并非两个数值)
+        //matrix.mapPoints(dst, 0, src, 2, 2);
+
+        Log.i("Matrix", "src after :" + Arrays.toString(src));
+        Log.i("Matrix", "dst after :" + Arrays.toString(dst));
     }
 }
