@@ -4,16 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.cky.learnandroiddetails.PathTest.LearnPathMainActivity;
-import com.cky.learnandroiddetails.SKUChoose.SkuChooseMainActivity;
-import com.cky.learnandroiddetails.SpannableStringLearn.SpannableStringMainActivity;
-import com.cky.learnandroiddetails.ViewScreenShot.VIewScreenShotMainActivity;
-import com.cky.learnandroiddetails.canvas.CanvasViewAct;
-import com.cky.learnandroiddetails.customattrs.MyCustomViewAct;
-import com.cky.learnandroiddetails.drawableSet.DrawableSetActivity;
-import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivity;
-import com.cky.learnandroiddetails.recyclerViewDecoration.AddRecyclerViewDecorationAct;
-import com.cky.learnandroiddetails.valueAnimForPayBarCode.DialogHeightChangeWithAnimMainActivity;
+import com.cky.learnandroiddetails.scrollviewcontent.ScrollViewContentTest;
 
 /**
  * 作者：cky
@@ -22,12 +13,12 @@ import com.cky.learnandroiddetails.valueAnimForPayBarCode.DialogHeightChangeWith
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<ScrollViewContentTest> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(LearnGcsSloopViewMainActivity.class);
+        super(ScrollViewContentTest.class);
     }
 
     @Override
