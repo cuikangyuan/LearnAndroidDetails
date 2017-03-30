@@ -4,9 +4,13 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,6 +23,9 @@ public class ScrollViewContentTest extends AppCompatActivity {
 
     private LinearLayout linearLayout;
 
+    private ImageView mImageView1;
+    private ImageView mImageView2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +36,28 @@ public class ScrollViewContentTest extends AppCompatActivity {
         linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
 
 
+        mImageView1 = (ImageView) findViewById(R.id.image1);
+        mImageView2 = (ImageView) findViewById(R.id.image2);
+
         init();
+
+        startAnimation(mImageView1, -20f, 20f);
+        startAnimation(mImageView2, -5f, 5f);
     }
 
+    private void startAnimation(View view, float a, float b) {
+        //摇摆
+        RotateAnimation mAnimation =new RotateAnimation(
+                a,b,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f);
 
+        mAnimation.setDuration(600);
+        mAnimation.setRepeatCount(Animation.INFINITE);
+        mAnimation.setRepeatMode(Animation.REVERSE);
+        view.setAnimation(mAnimation);
+        mAnimation.start();
+    }
     private void init() {
 
         int totalWidth = 0;
