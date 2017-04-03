@@ -93,12 +93,13 @@
         <activity android:name=".customattrs.MyCustomViewAct" />
         <activity android:name=".drawableSet.DrawableSetActivity" />
         <activity android:name=".learnGcsSloopView.LearnGcsSloopViewMainActivity" />
-        <activity android:name=".ViewScreenShot.VIewScreenShotMainActivity"></activity>
-        <activity android:name=".SKUChoose.SkuChooseMainActivity"></activity>
-        <activity android:name=".valueAnimForPayBarCode.DialogHeightChangeWithAnimMainActivity"></activity>
-        <activity android:name=".PathTest.LearnPathMainActivity"></activity>
-        <activity android:name=".SpannableStringLearn.SpannableStringMainActivity"></activity>
-        <activity android:name=".scrollviewcontent.ScrollViewContentTest"></activity>
+        <activity android:name=".ViewScreenShot.VIewScreenShotMainActivity" />
+        <activity android:name=".SKUChoose.SkuChooseMainActivity" />
+        <activity android:name=".valueAnimForPayBarCode.DialogHeightChangeWithAnimMainActivity" />
+        <activity android:name=".PathTest.LearnPathMainActivity" />
+        <activity android:name=".SpannableStringLearn.SpannableStringMainActivity" />
+        <activity android:name=".scrollviewcontent.ScrollViewContentTest" />
+        <activity android:name=".redpoint.TestRedPointAct"></activity>
     </application>
 
 </manifest>

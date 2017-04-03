@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.cky.learnandroiddetails.scrollviewcontent.ScrollViewContentTest;
+import com.cky.learnandroiddetails.redpoint.TestRedPointAct;
 
 /**
  * 作者：cky
@@ -13,12 +13,12 @@ import com.cky.learnandroiddetails.scrollviewcontent.ScrollViewContentTest;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ScrollViewContentTest> {
+public class MyTest extends ActivityInstrumentationTestCase2<TestRedPointAct> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ScrollViewContentTest.class);
+        super(TestRedPointAct.class);
     }
 
     @Override
