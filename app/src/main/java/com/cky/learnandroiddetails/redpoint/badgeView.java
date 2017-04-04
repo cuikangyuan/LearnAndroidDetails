@@ -86,7 +86,7 @@ public class badgeView extends View{
         //边框 + 背景
         if (mBadgeBorderWidth > 0) {
             mBadgePaint.setColor(mBadgeBorderColor);
-            canvas.drawRoundRect(badgeRectF, badgeWidth / 2, badgeHeight / 2, mBadgePaint);
+            canvas.drawRoundRect(badgeRectF, badgeHeight / 2, badgeHeight / 2, mBadgePaint);
 
             mBadgePaint.setColor(mBadgeBgColor);
             canvas.drawRoundRect(
@@ -94,13 +94,13 @@ public class badgeView extends View{
                             badgeRectF.top + mBadgeBorderWidth,
                             badgeRectF.right - mBadgeBorderWidth,
                             badgeRectF.bottom - mBadgeBorderWidth),
-                    badgeWidth / 2,
+                    badgeHeight / 2,
                     badgeHeight / 2,
                     mBadgePaint);
 
         } else {
             mBadgePaint.setColor(mBadgeBorderColor);
-            canvas.drawRoundRect(badgeRectF, badgeWidth / 2, badgeHeight / 2, mBadgePaint);
+            canvas.drawRoundRect(badgeRectF, badgeHeight / 2, badgeHeight / 2, mBadgePaint);
         }
 
         //文字

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.cky.learnandroiddetails.redpoint.TestRedPointAct;
+import com.cky.learnandroiddetails.canvas.CanvasViewAct;
 
 /**
  * 作者：cky
@@ -13,12 +13,12 @@ import com.cky.learnandroiddetails.redpoint.TestRedPointAct;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<TestRedPointAct> {
+public class MyTest extends ActivityInstrumentationTestCase2<CanvasViewAct> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(TestRedPointAct.class);
+        super(CanvasViewAct.class);
     }
 
     @Override
