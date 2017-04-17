@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.cky.learnandroiddetails.canvas.CanvasViewAct;
+import com.cky.learnandroiddetails.viewShadow.ViewShadowMainActivity;
 
 /**
  * 作者：cky
@@ -13,12 +13,12 @@ import com.cky.learnandroiddetails.canvas.CanvasViewAct;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<CanvasViewAct> {
+public class MyTest extends ActivityInstrumentationTestCase2<ViewShadowMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(CanvasViewAct.class);
+        super(ViewShadowMainActivity.class);
     }
 
     @Override

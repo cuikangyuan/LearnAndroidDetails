@@ -99,7 +99,8 @@
         <activity android:name=".PathTest.LearnPathMainActivity" />
         <activity android:name=".SpannableStringLearn.SpannableStringMainActivity" />
         <activity android:name=".scrollviewcontent.ScrollViewContentTest" />
-        <activity android:name=".redpoint.TestRedPointAct"></activity>
+        <activity android:name=".redpoint.TestRedPointAct" />
+        <activity android:name=".viewShadow.ViewShadowMainActivity"></activity>
     </application>
 
 </manifest>
