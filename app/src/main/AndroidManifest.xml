@@ -100,7 +100,8 @@
         <activity android:name=".SpannableStringLearn.SpannableStringMainActivity" />
         <activity android:name=".scrollviewcontent.ScrollViewContentTest" />
         <activity android:name=".redpoint.TestRedPointAct" />
-        <activity android:name=".viewShadow.ViewShadowMainActivity"></activity>
+        <activity android:name=".viewShadow.ViewShadowMainActivity" />
+        <activity android:name=".popupWindow.PopWindowMainActivity"></activity>
     </application>
 
 </manifest>

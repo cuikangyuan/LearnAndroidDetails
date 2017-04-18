@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.cky.learnandroiddetails.viewShadow.ViewShadowMainActivity;
+import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
 
 /**
  * 作者：cky
@@ -13,12 +13,12 @@ import com.cky.learnandroiddetails.viewShadow.ViewShadowMainActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ViewShadowMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<PopWindowMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ViewShadowMainActivity.class);
+        super(PopWindowMainActivity.class);
     }
 
     @Override
