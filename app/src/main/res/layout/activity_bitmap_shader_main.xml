@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <com.cky.learnandroiddetails.TestBitmapShader.RoundImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/chinese_400x300"
+        app:type="round"
+        app:borderRadius="30dp"/>
+
+    <com.cky.learnandroiddetails.TestBitmapShader.RoundImageView
+        android:layout_marginTop="15dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/chinese_400x300"
+        app:type="circle"/>
+</LinearLayout>

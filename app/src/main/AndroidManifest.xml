@@ -104,6 +104,12 @@
         <activity android:name=".popupWindow.PopWindowMainActivity"/>
         <activity android:name=".TestPair.TestPairMainActivity">
         </activity>
+        <activity android:name=".TestBitmapShader.BitmapShaderMainActivity">
+        </activity>
+        <activity android:name=".ActivityTransition.ActivityTransitionActivity1">
+        </activity>
+        <activity android:name=".ActivityTransition.ActivityTransitionActivity2">
+        </activity>
     </application>
 
 </manifest>
