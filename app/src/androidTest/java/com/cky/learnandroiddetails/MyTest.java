@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.cky.learnandroiddetails.RegionTest.RegionTestActivity;
 import com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity;
 import com.cky.learnandroiddetails.TestPair.TestPairMainActivity;
 import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
@@ -15,12 +16,12 @@ import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<BitmapShaderMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<RegionTestActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(BitmapShaderMainActivity.class);
+        super(RegionTestActivity.class);
     }
 
     @Override
