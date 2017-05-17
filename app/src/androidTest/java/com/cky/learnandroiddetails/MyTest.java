@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.cky.learnandroiddetails.MultiFingerTouch.MultiFingerTouchActivity;
 import com.cky.learnandroiddetails.RegionTest.RegionTestActivity;
 import com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity;
 import com.cky.learnandroiddetails.TestPair.TestPairMainActivity;
@@ -16,12 +17,12 @@ import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<RegionTestActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<MultiFingerTouchActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(RegionTestActivity.class);
+        super(MultiFingerTouchActivity.class);
     }
 
     @Override
