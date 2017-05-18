@@ -114,6 +114,8 @@
         </activity>
         <activity android:name=".MultiFingerTouch.MultiFingerTouchActivity">
         </activity>
+        <activity android:name=".CopyOrWriteListLearn.CopyOrWriteListMainActivity">
+        </activity>
     </application>
 
 </manifest>
