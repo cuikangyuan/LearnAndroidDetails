@@ -20,12 +20,12 @@ import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<SimpleFactoryActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<MatrixTestActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(SimpleFactoryActivity.class);
+        super(MatrixTestActivity.class);
     }
 
     @Override

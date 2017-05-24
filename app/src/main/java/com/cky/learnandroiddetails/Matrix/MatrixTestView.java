@@ -52,7 +52,7 @@ public class MatrixTestView extends CustomView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        canvas.translate(getWidth() / 2, getHeight() / 2);
         //位移移动
         //mMatrix.setTranslate(100, 0);
 
@@ -72,7 +72,6 @@ public class MatrixTestView extends CustomView {
         //mMatrix.setSkew(0.1f, 0, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
         //mMatrix.setSkew(0.1f, 0, 0, 0);
         //错切中心 好像 没什么效果
-        canvas.drawBitmap(mBitmap, mMatrix, mDefaultPaint);
 
         /*
         矩阵 的 前乘  后乘 效果不同
@@ -80,6 +79,79 @@ public class MatrixTestView extends CustomView {
         后乘 对于不同效果的叠加 可能会 互相影响
         */
 
-        mMatrix.preScale(1, 1);//前乘 mMatrix 矩阵在前  scale矩阵在后 这样实现 效果的叠加
+        //mMatrix.preScale(1, 1);//前乘 mMatrix 矩阵在前  scale矩阵在后 这样实现 效果的叠加
+
+        /*
+        setPolyToPoly 通过指定的0-4个点  原始坐标以及变化后的坐标  获取变换矩阵
+         */
+
+        //一个点  平移
+        /*
+        float[] src = {0, 0};
+        int dx = 100;
+        float[] dst = {0 + dx, 0 - dx};
+        mMatrix.setPolyToPoly(src, 0, dst, 0, 1);
+        */
+
+        /*
+        两个点
+        旋转   或者  缩放
+         */
+        int dx = 100;
+        /*
+        float[] src = {0 - dx, 0 - dx, mBitmap.getWidth(), mBitmap.getHeight()};
+
+        float[] dst = {0 - dx, 0 - dx, mBitmap.getWidth(), mBitmap.getHeight()};
+        mMatrix.setPolyToPoly(src, 0, dst, 0, 2);
+        */
+
+        int bw = mBitmap.getWidth();
+        int bh = mBitmap.getHeight();
+        /*
+        float[] src = {bw / 2, bh / 2, bw, 0};
+
+        float[] dst = {bw / 2, bh / 2, bh / 2 + bw / 2, bw / 2 + bh / 2};
+        mMatrix.setPolyToPoly(src, 0, dst, 0, 2);
+        */
+
+        //三个点 错切
+        /*
+        float[] src = {0, 0, 0, bh, bw, bh};
+        float[] dst = {0, 0, 200, bh, bw + 200, bh};
+        mMatrix.setPolyToPoly(src, 0, dst, 0, 3);
+        */
+
+        //透视
+        float[] src = {0, 0, 0, bh, bw, 0, bw, bh};
+        float[] dst = {0 + dx, 0, 0, bh, bw - dx, 0, bw, bh};
+        mMatrix.setPolyToPoly(src, 0, dst, 0, 4);
+
+        //翻转
+        //invert 能反转就 返回true 并将反转后的值 写进 方法形参 否则返回false
+
+        Matrix matrix = new Matrix();
+/*
+        if (mMatrix.invert(matrix)) {
+            canvas.drawBitmap(mBitmap, matrix, mDefaultPaint);
+
+        } else {
+            canvas.drawBitmap(mBitmap, mMatrix, mDefaultPaint);
+
+        }
+*/
+
+        //mMatrix.preTranslate(- mBitmap.getWidth() / 2, - mBitmap.getHeight() / 2);
+        /*
+        matrix.setScale(0.5f, 0.5f);
+        matrix.preTranslate(- mBitmap.getWidth() / 2, - mBitmap.getHeight() / 2);
+        matrix.preRotate(90);
+        */
+        //matrix.setTranslate(- mBitmap.getWidth() / 2, - mBitmap.getHeight() / 2);
+        //matrix.setScale(0.5f, 0.5f);
+        matrix.setTranslate(- mBitmap.getWidth() / 2, - mBitmap.getHeight() / 2);
+        matrix.preRotate(90, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
+        matrix.preRotate(90, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
+        matrix.preScale(0.5f, 0.5f, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
+        canvas.drawBitmap(mBitmap, matrix, mDefaultPaint);
     }
 }

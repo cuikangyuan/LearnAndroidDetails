@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<!--
+
     <com.cky.learnandroiddetails.Matrix.MatrixTestView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"/>
--->
-    <com.cky.learnandroiddetails.MultiFingerTouch.DragImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+    <!--
+        <com.cky.learnandroiddetails.MultiFingerTouch.DragImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"/>
+            -->
 </RelativeLayout>
