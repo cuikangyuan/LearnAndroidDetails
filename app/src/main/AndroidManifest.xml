@@ -118,6 +118,8 @@
         </activity>
         <activity android:name=".Matrix.MatrixTestActivity">
         </activity>
+        <activity android:name=".DesignPattern.SimpleFactory.SimpleFactoryActivity">
+        </activity>
     </application>
 
 </manifest>

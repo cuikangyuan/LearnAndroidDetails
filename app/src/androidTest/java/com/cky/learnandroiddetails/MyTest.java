@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.CopyOrWriteListLearn.CopyOrWriteListMainActivity;
+import com.cky.learnandroiddetails.DesignPattern.SimpleFactory.SimpleFactoryActivity;
 import com.cky.learnandroiddetails.Matrix.MatrixTestActivity;
 import com.cky.learnandroiddetails.MultiFingerTouch.MultiFingerTouchActivity;
 import com.cky.learnandroiddetails.RegionTest.RegionTestActivity;
@@ -19,12 +20,12 @@ import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<MultiFingerTouchActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<SimpleFactoryActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(MultiFingerTouchActivity.class);
+        super(SimpleFactoryActivity.class);
     }
 
     @Override
