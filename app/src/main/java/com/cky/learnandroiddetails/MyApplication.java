@@ -2,6 +2,7 @@ package com.cky.learnandroiddetails;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.widget.Toast;
@@ -22,9 +23,13 @@ public class MyApplication extends Application {
 
     private PatchManager mPatchManager;
 
+    public static Context mContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        mContext = this;
         //initHotFix();
         //API 14 引入的 用来监听所以Activity的生命回调
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
@@ -63,6 +68,10 @@ public class MyApplication extends Application {
 
             }
         });
+    }
+
+    public static Context getContext() {
+        return mContext;
     }
 
     public void initHotFix() {
