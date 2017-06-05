@@ -12,6 +12,7 @@ import com.cky.learnandroiddetails.RegionTest.RegionTestActivity;
 import com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity;
 import com.cky.learnandroiddetails.TestPair.TestPairMainActivity;
 import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
+import com.cky.learnandroiddetails.webViewTest.*;
 
 /**
  * 作者：cky
@@ -20,12 +21,12 @@ import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<MatrixTestActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<com.cky.learnandroiddetails.webViewTest.MainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(MatrixTestActivity.class);
+        super(com.cky.learnandroiddetails.webViewTest.MainActivity.class);
     }
 
     @Override

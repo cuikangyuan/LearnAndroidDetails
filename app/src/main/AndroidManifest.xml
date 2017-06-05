@@ -121,17 +121,17 @@
         <activity android:name=".DesignPattern.SimpleFactory.SimpleFactoryActivity">
         </activity>
 
-
         <meta-data
             android:name="a_host"
             android:value="${A_HOST}">
         </meta-data>
-
         <meta-data
             android:name="b_host"
             android:value="${B_HOST}">
         </meta-data>
 
+        <activity android:name=".webViewTest.MainActivity">
+        </activity>
     </application>
 
 </manifest>

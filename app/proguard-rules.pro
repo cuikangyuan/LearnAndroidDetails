@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# 抛出异常时保留代码行号
+#-keepattributes SourceFile,LineNumberTable
+
+#-keep class com.cky.learnandroiddetails.AndFix.**  {*;}
