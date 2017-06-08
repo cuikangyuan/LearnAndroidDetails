@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.cky.learnandroiddetails.Camera.CameraTestActivity;
 import com.cky.learnandroiddetails.CopyOrWriteListLearn.CopyOrWriteListMainActivity;
 import com.cky.learnandroiddetails.DesignPattern.SimpleFactory.SimpleFactoryActivity;
 import com.cky.learnandroiddetails.Matrix.MatrixTestActivity;
@@ -21,12 +22,12 @@ import com.cky.learnandroiddetails.webViewTest.*;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<com.cky.learnandroiddetails.webViewTest.MainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<CameraTestActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(com.cky.learnandroiddetails.webViewTest.MainActivity.class);
+        super(CameraTestActivity.class);
     }
 
     @Override
