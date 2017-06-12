@@ -1,7 +1,8 @@
 package com.cky.learnandroiddetails.Camera;
 
-import android.app.ActivityManager;
+
 import android.graphics.Point;
+import android.graphics.SurfaceTexture;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.SurfaceHolder;
@@ -16,6 +17,8 @@ public class CameraTestActivity extends AppCompatActivity implements CameraInter
     CameraSurfaceView mCameraSurfaceView = null;
     ImageButton mImageButton;
     float previewRate = -1;
+
+    CameraTextureView mCameraTextureView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +37,18 @@ public class CameraTestActivity extends AppCompatActivity implements CameraInter
     }
 
     private void initViews () {
+        Point point = DisplayUtil.getScreenMetrics(this);
+        previewRate = DisplayUtil.getScreenRate(this);
+        /*
         mCameraSurfaceView = (CameraSurfaceView) findViewById(R.id.camera_surfaceview);
-        mImageButton = (ImageButton) findViewById(R.id.btn_shutter);
 
         ViewGroup.LayoutParams layoutParams = mCameraSurfaceView.getLayoutParams();
-        Point point = DisplayUtil.getScreenMetrics(this);
 
         layoutParams.width = point.x;
         layoutParams.height = point.y;
-
-        previewRate = DisplayUtil.getScreenRate(this);
         mCameraSurfaceView.setLayoutParams(layoutParams);
-
+        */
+        mImageButton = (ImageButton) findViewById(R.id.btn_shutter);
         mImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,11 +56,22 @@ public class CameraTestActivity extends AppCompatActivity implements CameraInter
             }
         });
 
+        mCameraTextureView = (CameraTextureView) findViewById(R.id.camera_textureview);
+        ViewGroup.LayoutParams layoutParams = mCameraTextureView.getLayoutParams();
+
+        layoutParams.width = point.x;
+        layoutParams.height = point.y;
+        mCameraTextureView.setLayoutParams(layoutParams);
+
     }
 
     @Override
     public void cameraHasOpened() {
-        SurfaceHolder holder = mCameraSurfaceView.getHolder();
-        CameraInterface.getInstance().doStartPreview(holder, previewRate);
+        //1.
+        //SurfaceHolder holder = mCameraSurfaceView.getHolder();
+        //CameraInterface.getInstance().doStartPreview(holder, previewRate);
+        //2.
+        SurfaceTexture surfaceTexture = mCameraTextureView.getSurfaceTexture();
+        CameraInterface.getInstance().doStartPreview(surfaceTexture, previewRate);
     }
 }

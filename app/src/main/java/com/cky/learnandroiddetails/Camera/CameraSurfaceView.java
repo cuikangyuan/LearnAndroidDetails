@@ -9,6 +9,10 @@ import android.view.SurfaceView;
 
 /**
  * Created by cuikangyuan on 2017/6/8.
+ *
+ * 也可以将 打开相机相关流程 与 surfaceView捆绑
+ *
+ *  这样可以解决点击home键，再回到页面 显示黑屏的问题
  */
 
 public class CameraSurfaceView extends SurfaceView implements SurfaceHolder.Callback {

@@ -3,6 +3,7 @@ package com.cky.learnandroiddetails.Camera;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
+import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -52,7 +53,7 @@ public class CameraInterface {
 
     /**
      * 开启预览
-     *
+     *使用Surfaceview开启预览
      * @param holder
      * @param previewRate
      */
@@ -62,6 +63,38 @@ public class CameraInterface {
             return;
         }
 
+        if (mCamera != null) {
+            try {
+                mCamera.setPreviewDisplay(holder);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            initCamera(previewRate);
+        }
+    }
+
+    /**
+     * 使用surfaceTexture开启预览
+     * @param surfaceTexture
+     * @param previewRate
+     */
+    public void doStartPreview(SurfaceTexture surfaceTexture, float previewRate) {
+        if (isPreviewing && mCamera != null) {
+            mCamera.stopPreview();
+            return;
+        }
+
+        if (mCamera != null) {
+            try {
+                mCamera.setPreviewTexture(surfaceTexture);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            initCamera(previewRate);
+        }
+    }
+
+    private void initCamera(float previewRate) {
         if (mCamera != null) {
             mParameters = mCamera.getParameters();
             mParameters.setPictureFormat(PixelFormat.JPEG);
@@ -89,13 +122,7 @@ public class CameraInterface {
             }
 
             mCamera.setParameters(mParameters);
-
-            try {
-                mCamera.setPreviewDisplay(holder);
-                mCamera.startPreview();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            mCamera.startPreview();
 
             isPreviewing = true;
             mPreviewRate = previewRate;
