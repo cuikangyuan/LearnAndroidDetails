@@ -3,6 +3,7 @@ package com.cky.learnandroiddetails.Camera;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
+import android.graphics.Point;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.util.Log;
@@ -110,7 +111,6 @@ public class CameraInterface {
                     mParameters.getSupportedPreviewSizes(),
                     previewRate,
                     800);
-
             mParameters.setPreviewSize(previewSize.width, previewSize.height);
 
             mCamera.setDisplayOrientation(90);
@@ -157,6 +157,16 @@ public class CameraInterface {
         }
     }
 
+    int DST_RECT_WIDTH, DST_RECT_HEIGHT;
+
+    public void doTakePicture(int w, int h) {
+        if (isPreviewing && (mCamera != null)) {
+            DST_RECT_WIDTH = w;
+            DST_RECT_HEIGHT = h;
+            mCamera.takePicture(mShutterCallback, null, mRectJpegPictureCallback);
+        }
+    }
+
     //快门按下的回调 在此处可以设置播放特定相机快门声音 默认有快门声音
     Camera.ShutterCallback mShutterCallback = new Camera.ShutterCallback() {
         @Override
@@ -196,4 +206,51 @@ public class CameraInterface {
             isPreviewing = true;
         }
     };
+    Camera.PictureCallback mRectJpegPictureCallback = new Camera.PictureCallback() {
+        @Override
+        public void onPictureTaken(byte[] data, Camera camera) {
+            Bitmap bitmap = null;
+            if (data != null) {
+                bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+
+                mCamera.stopPreview();
+                isPreviewing = false;
+            }
+            //保存图片到本地
+            if (bitmap != null) {
+                //设置FOCUS_MODE_CONTINUOUS_VIDEO)之后，myParam.set("rotation", 90)失效。
+                //图片竟然不能旋转了，故这里要旋转下
+                Bitmap rotateBitmap = ImageUtil.getRotatedBitmap(bitmap, 90.0f);
+
+                int x = rotateBitmap.getWidth() / 2 - DST_RECT_WIDTH / 2;
+                int y = rotateBitmap.getHeight() / 2 - DST_RECT_HEIGHT / 2;
+                Bitmap rectBitmap = Bitmap.createBitmap(
+                        rotateBitmap,
+                        x,
+                        y,
+                        DST_RECT_WIDTH,
+                        DST_RECT_HEIGHT);
+
+                FileUtil.saveBitmap(rectBitmap);
+
+                if (!rotateBitmap.isRecycled()) {
+                    rotateBitmap.recycle();
+                    rotateBitmap = null;
+                }
+
+                if (!rectBitmap.isRecycled()) {
+                    rectBitmap.recycle();
+                    rectBitmap = null;
+                }
+            }
+
+            mCamera.startPreview();
+            isPreviewing = true;
+        }
+    };
+
+    public Point doGetPrictureSize() {
+        Camera.Size pictureSize = mCamera.getParameters().getPictureSize();
+        return new Point(pictureSize.width, pictureSize.height);
+    }
 }
