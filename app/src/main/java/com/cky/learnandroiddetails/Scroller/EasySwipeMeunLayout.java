@@ -127,6 +127,11 @@ public class EasySwipeMeunLayout extends ViewGroup{
                 float distance = lastX - event.getRawX();
                 lastX = event.getRawX();
                 lastY = event.getRawY();
+                /*
+                if(Math.abs(getScrollX()) <= rightMenuWidth) {
+                    scrollBy((int)distance, 0);
+                }
+                */
                 scrollBy((int)distance, 0);
                 break;
             case MotionEvent.ACTION_UP:

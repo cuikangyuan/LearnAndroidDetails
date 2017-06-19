@@ -7,4 +7,21 @@
     android:layout_height="match_parent"
     tools:context="com.cky.learnandroiddetails.Scroller.ScrollerMainActivity">
 
+    <com.cky.learnandroiddetails.Scroller.EasySwipeMeunLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/red"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:text="删除"
+            android:gravity="center"/>
+
+    </com.cky.learnandroiddetails.Scroller.EasySwipeMeunLayout>
 </LinearLayout>
