@@ -142,6 +142,8 @@
         </activity>
         <activity android:name=".Scroller.ScrollerMainActivity">
         </activity>
+        <activity android:name=".ActOnResumeTest.onResumeTestMainActivity">
+        </activity>
     </application>
 
 </manifest>
