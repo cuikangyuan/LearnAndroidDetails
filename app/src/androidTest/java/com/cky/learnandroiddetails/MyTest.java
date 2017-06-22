@@ -10,6 +10,7 @@ import com.cky.learnandroiddetails.CopyOrWriteListLearn.CopyOrWriteListMainActiv
 import com.cky.learnandroiddetails.DesignPattern.SimpleFactory.SimpleFactoryActivity;
 import com.cky.learnandroiddetails.Matrix.MatrixTestActivity;
 import com.cky.learnandroiddetails.MultiFingerTouch.MultiFingerTouchActivity;
+import com.cky.learnandroiddetails.PasswordEditTextView.PasswordEditTextMainActivity;
 import com.cky.learnandroiddetails.RegionTest.RegionTestActivity;
 import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
 import com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity;
@@ -24,12 +25,12 @@ import com.cky.learnandroiddetails.webViewTest.*;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<onResumeTestMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<PasswordEditTextMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(onResumeTestMainActivity.class);
+        super(PasswordEditTextMainActivity.class);
     }
 
     @Override
