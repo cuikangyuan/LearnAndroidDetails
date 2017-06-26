@@ -127,7 +127,7 @@ public class FadeInTextView extends TextView {
                         }
                     }
 
-                    invalidate();
+                    //invalidate();
                 }
 
             }

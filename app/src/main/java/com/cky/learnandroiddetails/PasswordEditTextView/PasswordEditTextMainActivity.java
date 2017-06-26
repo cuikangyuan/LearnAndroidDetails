@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.cky.learnandroiddetails.R;
+import com.cky.learnandroiddetails.ToastUtil;
 import com.cky.learnandroiddetails.widget.FadeInTextView;
 import com.cky.learnandroiddetails.widget.SubmitButtonWithAnimationView;
 
@@ -36,7 +37,13 @@ public class PasswordEditTextMainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mFadeInTextView
                         .setTextString("一二三四五七八九十一二三四五七八九十一二三四五七八九十一二三四五七八九十一二三四五七八九十一二三四五七八九十")
-                        .startAnimation();
+                        .startAnimation()
+                        .setTextAnimationListener(new FadeInTextView.TextAnimationListener() {
+                            @Override
+                            public void animationFinish() {
+                                ToastUtil.showToast(PasswordEditTextMainActivity.this, "animation finish");
+                            }
+                        });
             }
         });
     }
