@@ -60,9 +60,13 @@ public class FadeInTextView extends TextView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        /*
         if (mStringBuffer != null) {
             drawText(canvas, mStringBuffer.toString());
         }
+        */
+
+        //直接使用setText 可以不用自己控制绘制逻辑 支持多行展示
     }
 
     @Override
@@ -114,6 +118,8 @@ public class FadeInTextView extends TextView {
 
                     mStringBuffer.append(arr[animatedValue]);
                     currentIndex = animatedValue;
+
+                    setText(mStringBuffer.toString());
 
                     if (currentIndex == textCount - 1) {
                         if (mTextAnimationListener != null) {
