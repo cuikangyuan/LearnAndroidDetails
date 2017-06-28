@@ -86,9 +86,9 @@ public class ProgressBarWithTip extends View {
         tipWidth = DisplayUtil.dip2px(mContext, 30);
 
         triangleBorder = DisplayUtil.dip2px(mContext, 10);
-        triangleHeight = DisplayUtil.dip2px(mContext, (int) (triangleBorder * Math.sin(60)));
+        triangleHeight = (int) (triangleBorder * Math.sin(Math.PI / 3));
 
-        progressBarMarginTop = DisplayUtil.dip2px(mContext, 20);
+        progressBarMarginTop = DisplayUtil.dip2px(mContext, 3);
 
         tipWidth = DisplayUtil.dip2px(mContext, 30);
 
@@ -214,7 +214,7 @@ public class ProgressBarWithTip extends View {
     private void drawTriangle(Canvas canvas) {
         Path path = new Path();
         path.moveTo(tipWidth / 2 - triangleBorder / 2 + moveDis, tipHeight);
-        path.lineTo(tipWidth / 2 + moveDis, tipHeight - triangleHeight/2);
+        path.lineTo(tipWidth / 2 + moveDis, tipHeight + triangleHeight);
         path.lineTo(tipWidth / 2 + triangleBorder / 2 + moveDis, tipHeight);
 
         canvas.drawPath(path, mTipPaint);
