@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.cky.learnandroiddetails.R;
 import com.cky.learnandroiddetails.ToastUtil;
 import com.cky.learnandroiddetails.widget.FadeInTextView;
+import com.cky.learnandroiddetails.widget.ProgressBarWithTip;
 import com.cky.learnandroiddetails.widget.SubmitButtonWithAnimationView;
 
 public class PasswordEditTextMainActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class PasswordEditTextMainActivity extends AppCompatActivity {
             }
         });
   */
-
+/*
         mFadeInTextView = (FadeInTextView) findViewById(R.id.fade_text_view);
         mButton = (Button) findViewById(R.id.button);
 
@@ -46,5 +47,9 @@ public class PasswordEditTextMainActivity extends AppCompatActivity {
                         });
             }
         });
+
+*/
+        ProgressBarWithTip viewById = (ProgressBarWithTip) findViewById(R.id.progressBar);
+        viewById.setProgress(100f);
     }
 }
