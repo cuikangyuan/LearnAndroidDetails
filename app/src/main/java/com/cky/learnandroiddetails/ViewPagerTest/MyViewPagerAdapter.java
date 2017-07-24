@@ -3,6 +3,7 @@ package com.cky.learnandroiddetails.ViewPagerTest;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -34,5 +35,26 @@ public class MyViewPagerAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         //super.destroyItem(container, position, object);
         //不需要在此处removeView
+    }
+
+    @Override
+    public Object instantiateItem(ViewGroup container, int position) {
+
+        position %= viewList.size();
+        if (position < 0) {
+            position = viewList.size() + position;
+        }
+
+        ImageView view = viewList.get(position);
+
+        ViewParent viewParent = view.getParent();
+        if (viewParent != null) {
+            ViewGroup viewGroup = (ViewGroup) viewParent;
+            viewGroup.removeView(view);
+        }
+
+        container.addView(view);
+
+        return view;
     }
 }
