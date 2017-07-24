@@ -146,6 +146,8 @@
         </activity>
         <activity android:name=".PasswordEditTextView.PasswordEditTextMainActivity">
         </activity>
+        <activity android:name=".ViewPagerTest.ViewPagerMainActivity">
+        </activity>
     </application>
 
 </manifest>
