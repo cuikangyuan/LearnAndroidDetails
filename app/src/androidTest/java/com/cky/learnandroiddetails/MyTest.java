@@ -8,6 +8,7 @@ import com.cky.learnandroiddetails.ActOnResumeTest.onResumeTestMainActivity;
 import com.cky.learnandroiddetails.Camera.CameraTestActivity;
 import com.cky.learnandroiddetails.CopyOrWriteListLearn.CopyOrWriteListMainActivity;
 import com.cky.learnandroiddetails.DesignPattern.SimpleFactory.SimpleFactoryActivity;
+import com.cky.learnandroiddetails.FlipAnimTest.FlipAnimTestAct;
 import com.cky.learnandroiddetails.Matrix.MatrixTestActivity;
 import com.cky.learnandroiddetails.MultiFingerTouch.MultiFingerTouchActivity;
 import com.cky.learnandroiddetails.PasswordEditTextView.PasswordEditTextMainActivity;
@@ -26,12 +27,12 @@ import com.cky.learnandroiddetails.webViewTest.*;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ViewPagerMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<FlipAnimTestAct> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ViewPagerMainActivity.class);
+        super(FlipAnimTestAct.class);
     }
 
     @Override
