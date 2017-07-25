@@ -47,8 +47,8 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         int width = DisplayUtil.getScreenMetrics(this).x - DisplayUtil.dip2px(this, 15) * 2;
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT);
         mRollViewPager.setGravity(Gravity.CENTER);
-        mRollViewPager.getViewPager().setClipChildren(false);
         mRollViewPager.getViewPager().setOffscreenPageLimit(imgs.size());
+        //设置下面属性导致左右两侧阴影部分不显示
         //mRollViewPager.getViewPager().setPageMargin(DisplayUtil.dip2px(this, 15));
         mRollViewPager.getViewPager().setLayoutParams(layoutParams);
         mRollViewPager.getViewPager().setPageTransformer(true, new ZoomOutPageTransformer());
