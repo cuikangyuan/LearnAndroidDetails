@@ -72,4 +72,5 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    compile 'com.jude:rollviewpager:1.4.6'
 }

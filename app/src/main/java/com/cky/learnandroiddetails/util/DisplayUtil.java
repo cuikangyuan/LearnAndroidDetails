@@ -1,6 +1,8 @@
 package com.cky.learnandroiddetails.util;
 
 import android.content.Context;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
 
 /**
  * Created by cuikangyuan on 16/9/16.
@@ -27,5 +29,13 @@ public class DisplayUtil {
 
     public static int pxToDpCeilInt(Context context, float px) {
         return (int)(pxToDp(context, px) + 0.5f);
+    }
+
+    public static Point getScreenMetrics(Context context) {
+        DisplayMetrics dm = context.getResources().getDisplayMetrics();
+        int w_screen = dm.widthPixels;
+        int h_screen = dm.heightPixels;
+        return new Point(w_screen, h_screen);
+
     }
 }

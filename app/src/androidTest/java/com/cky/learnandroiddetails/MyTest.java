@@ -15,6 +15,7 @@ import com.cky.learnandroiddetails.RegionTest.RegionTestActivity;
 import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
 import com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity;
 import com.cky.learnandroiddetails.TestPair.TestPairMainActivity;
+import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerMainActivity;
 import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
 import com.cky.learnandroiddetails.webViewTest.*;
 
@@ -25,12 +26,12 @@ import com.cky.learnandroiddetails.webViewTest.*;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<PasswordEditTextMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<ViewPagerMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(PasswordEditTextMainActivity.class);
+        super(ViewPagerMainActivity.class);
     }
 
     @Override

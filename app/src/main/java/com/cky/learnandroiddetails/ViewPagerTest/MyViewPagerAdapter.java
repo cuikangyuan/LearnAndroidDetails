@@ -95,7 +95,7 @@ public class MyViewPagerAdapter extends PagerAdapter {
             switch (msg.what) {
                 case MSG_UPDATE_VIEW:
                     currentIndex++;
-                    activity.mViewPager.setCurrentItem(currentIndex);
+                    //activity.mViewPager.setCurrentItem(currentIndex);
                     activity.mMyHandler.sendEmptyMessageDelayed(MSG_UPDATE_VIEW, DELAY_TIME);
                     break;
                 case MSG_KEEP_SILENT:
