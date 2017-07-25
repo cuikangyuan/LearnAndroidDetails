@@ -14,16 +14,24 @@ import com.cky.learnandroiddetails.Camera.DisplayUtil;
 import com.cky.learnandroiddetails.R;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
+import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ *
+ * 1.可以使用正常adapter实现单侧有缓存显示
+ * 2.可以使用LoopAdapter实现双侧有缓存显示
+ */
 
 public class ViewPagerMainActivity extends AppCompatActivity {
 
     public MyViewPagerAdapter.MyHandler mMyHandler;
     public RollPagerView mRollViewPager;
     private TestLoopAdapter mAdapter;
+    private TestNomalAdapter mAdapter1;
 
     private List<Integer> imgs = new ArrayList<>();
 
@@ -35,23 +43,36 @@ public class ViewPagerMainActivity extends AppCompatActivity {
 
         mRollViewPager = (RollPagerView) findViewById(R.id.view_pager);
         mRollViewPager.setHintView(null);
-        mAdapter = new TestLoopAdapter(mRollViewPager, imgs);
-        mRollViewPager.setAdapter(mAdapter);
+        //mAdapter = new TestLoopAdapter(mRollViewPager, imgs);
+
+
+        mAdapter1 = new TestNomalAdapter(imgs);
+
+        mRollViewPager.setAdapter(mAdapter1);
 
         imgs.add(R.mipmap.vp_1);
-        imgs.add(R.mipmap.vp_2);
-        imgs.add(R.mipmap.vp_3);
-        imgs.add(R.mipmap.vp_4);
+        //imgs.add(R.mipmap.vp_2);
+        //imgs.add(R.mipmap.vp_3);
+        //imgs.add(R.mipmap.vp_4);
 
-        mAdapter.notifyDataSetChanged();
+        mAdapter1.notifyDataSetChanged();
         int width = DisplayUtil.getScreenMetrics(this).x - DisplayUtil.dip2px(this, 15) * 2;
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT);
         mRollViewPager.setGravity(Gravity.CENTER);
-        mRollViewPager.getViewPager().setOffscreenPageLimit(imgs.size());
+
+
+        if (imgs.size() == 1) {
+            mRollViewPager.getViewPager().setOffscreenPageLimit(0);
+            mRollViewPager.setPlayDelay(0);//不轮播
+        } else {
+            mRollViewPager.getViewPager().setOffscreenPageLimit(imgs.size());//两面都会出现阴影
+            mRollViewPager.setPlayDelay(0);//不轮播
+        }
         //设置下面属性导致左右两侧阴影部分不显示
         //mRollViewPager.getViewPager().setPageMargin(DisplayUtil.dip2px(this, 15));
         mRollViewPager.getViewPager().setLayoutParams(layoutParams);
         mRollViewPager.getViewPager().setPageTransformer(true, new ZoomOutPageTransformer());
+        //设置一下属性导致拉到头的光晕不显示
         mRollViewPager.getViewPager().setOverScrollMode(ViewPager.OVER_SCROLL_NEVER);
 
         int mScrollSpeed = 450;
@@ -65,7 +86,28 @@ public class ViewPagerMainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
 
+    private static class TestNomalAdapter extends StaticPagerAdapter {
+
+        private List<Integer> imgs = new ArrayList<>();
+
+        public TestNomalAdapter(List<Integer> imgs) {
+            this.imgs = imgs;
+        }
+        @Override
+        public View getView(ViewGroup container, int position) {
+            ImageView view = new ImageView(container.getContext());
+            view.setImageResource(imgs.get(position));
+            view.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            return view;
+        }
+
+        @Override
+        public int getCount() {
+            return imgs.size();
+        }
     }
 
     private class TestLoopAdapter extends LoopPagerAdapter {

@@ -12,6 +12,5 @@
         android:clipChildren="false"
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        app:rollviewpager_play_delay="3000"/>
+        android:layout_height="180dp"/>
 </RelativeLayout>
