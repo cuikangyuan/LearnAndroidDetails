@@ -5,6 +5,10 @@ import android.os.Bundle;
 
 import com.cky.learnandroiddetails.R;
 
+/**
+ * http://blog.csdn.net/oQiHaoGongYuan/article/details/49869137
+ */
+
 public class FlipAnimTestAct extends AppCompatActivity {
 
     @Override
