@@ -1,11 +1,14 @@
 package com.cky.learnandroiddetails.ViewPagerTest;
 
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ImageView;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 /**
@@ -56,5 +59,58 @@ public class MyViewPagerAdapter extends PagerAdapter {
         container.addView(view);
 
         return view;
+    }
+
+    public static class MyHandler extends Handler {
+        //更新显示
+        protected static final int MSG_UPDATE_VIEW = 1;
+        //暂停轮播
+        protected static final int MSG_KEEP_SILENT = 2;
+        //恢复轮播
+        protected static final int MSG_BREAK_SILENT = 3;
+        //记录最新页码
+        protected static final int MSG_UPDATE_INDEX = 4;
+
+        protected static final int DELAY_TIME = 3000;
+
+        private WeakReference<ViewPagerMainActivity> mWeakReference;
+
+        private int currentIndex = 0;
+
+        protected MyHandler(WeakReference<ViewPagerMainActivity> weakReference) {
+            this.mWeakReference = weakReference;
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            ViewPagerMainActivity activity = mWeakReference.get();
+            if (activity == null) {
+                return;
+            }
+
+            if (activity.mMyHandler.hasMessages(MSG_UPDATE_VIEW)) {
+                activity.mMyHandler.removeMessages(MSG_UPDATE_VIEW);
+            }
+            switch (msg.what) {
+                case MSG_UPDATE_VIEW:
+                    currentIndex++;
+                    activity.mViewPager.setCurrentItem(currentIndex);
+                    activity.mMyHandler.sendEmptyMessageDelayed(MSG_UPDATE_VIEW, DELAY_TIME);
+                    break;
+                case MSG_KEEP_SILENT:
+                    break;
+                case MSG_BREAK_SILENT:
+                    activity.mMyHandler.sendEmptyMessageDelayed(MSG_UPDATE_VIEW, DELAY_TIME);
+                    break;
+                case MSG_UPDATE_INDEX:
+                    currentIndex = msg.arg1;
+                    break;
+                default:
+                    break;
+            }
+
+
+        }
     }
 }
