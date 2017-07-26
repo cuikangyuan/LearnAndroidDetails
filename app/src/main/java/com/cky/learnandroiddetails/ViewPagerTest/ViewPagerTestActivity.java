@@ -1,8 +1,8 @@
 package com.cky.learnandroiddetails.ViewPagerTest;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +26,7 @@ import java.util.List;
  * 2.可以使用LoopAdapter实现双侧有缓存显示
  */
 
-public class ViewPagerMainActivity extends AppCompatActivity {
+public class ViewPagerTestActivity extends AppCompatActivity {
 
     public MyViewPagerAdapter.MyHandler mMyHandler;
     public RollPagerView mRollViewPager;
@@ -53,10 +53,11 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         mRollViewPager.setAdapter(mAdapter);
 
         imgs.add(R.mipmap.vp_1);
-        //imgs.add(R.mipmap.vp_2);
-        //imgs.add(R.mipmap.vp_3);
+        imgs.add(R.mipmap.vp_2);
+        imgs.add(R.mipmap.vp_3);
         //imgs.add(R.mipmap.vp_4);
 
+        mAdapter1.notifyDataSetChanged();
         mAdapter.notifyDataSetChanged();
 
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT);

@@ -17,6 +17,7 @@ import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
 import com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity;
 import com.cky.learnandroiddetails.TestPair.TestPairMainActivity;
 import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerMainActivity;
+import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerTestActivity;
 import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
 import com.cky.learnandroiddetails.webViewTest.*;
 
