@@ -51,8 +51,8 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         mRollViewPager.setAdapter(mAdapter1);
 
         imgs.add(R.mipmap.vp_1);
-        //imgs.add(R.mipmap.vp_2);
-        //imgs.add(R.mipmap.vp_3);
+        imgs.add(R.mipmap.vp_2);
+        imgs.add(R.mipmap.vp_3);
         //imgs.add(R.mipmap.vp_4);
 
         mAdapter1.notifyDataSetChanged();
@@ -71,10 +71,14 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         //设置下面属性导致左右两侧阴影部分不显示
         //mRollViewPager.getViewPager().setPageMargin(DisplayUtil.dip2px(this, 15));
         mRollViewPager.getViewPager().setLayoutParams(layoutParams);
-        mRollViewPager.getViewPager().setPageTransformer(true, new ZoomOutPageTransformer());
+
+        //设置拖拽
+        //mRollViewPager.getViewPager().setPageTransformer(true, new ZoomOutPageTransformer());
         //设置一下属性导致拉到头的光晕不显示
         mRollViewPager.getViewPager().setOverScrollMode(ViewPager.OVER_SCROLL_NEVER);
 
+        //设置scroller
+        /*
         int mScrollSpeed = 450;
         try {
             Field mScroller =ViewPager.class.getDeclaredField("mScroller");
@@ -85,6 +89,7 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        */
 
     }
 

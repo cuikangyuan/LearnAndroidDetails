@@ -27,12 +27,12 @@ import com.cky.learnandroiddetails.webViewTest.*;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<FlipAnimTestAct> {
+public class MyTest extends ActivityInstrumentationTestCase2<ViewPagerMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(FlipAnimTestAct.class);
+        super(ViewPagerMainActivity.class);
     }
 
     @Override
