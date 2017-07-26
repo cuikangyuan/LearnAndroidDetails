@@ -4,22 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.cky.learnandroiddetails.ActOnResumeTest.onResumeTestMainActivity;
-import com.cky.learnandroiddetails.Camera.CameraTestActivity;
-import com.cky.learnandroiddetails.CopyOrWriteListLearn.CopyOrWriteListMainActivity;
-import com.cky.learnandroiddetails.DesignPattern.SimpleFactory.SimpleFactoryActivity;
-import com.cky.learnandroiddetails.FlipAnimTest.FlipAnimTestAct;
-import com.cky.learnandroiddetails.Matrix.MatrixTestActivity;
-import com.cky.learnandroiddetails.MultiFingerTouch.MultiFingerTouchActivity;
-import com.cky.learnandroiddetails.PasswordEditTextView.PasswordEditTextMainActivity;
-import com.cky.learnandroiddetails.RegionTest.RegionTestActivity;
-import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
-import com.cky.learnandroiddetails.TestBitmapShader.BitmapShaderMainActivity;
-import com.cky.learnandroiddetails.TestPair.TestPairMainActivity;
-import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerMainActivity;
-import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerTestActivity;
-import com.cky.learnandroiddetails.popupWindow.PopWindowMainActivity;
-import com.cky.learnandroiddetails.webViewTest.*;
+import com.cky.learnandroiddetails.ViewPagerBeGalleryTest.ViewPagerForGalleryMainActivity;
 
 /**
  * 作者：cky
@@ -28,12 +13,12 @@ import com.cky.learnandroiddetails.webViewTest.*;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ViewPagerMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<ViewPagerForGalleryMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ViewPagerMainActivity.class);
+        super(ViewPagerForGalleryMainActivity.class);
     }
 
     @Override
