@@ -150,8 +150,11 @@
         </activity>
         <activity android:name=".FlipAnimTest.FlipAnimTestAct">
         </activity>
-        <activity android:name=".ViewPagerTest.ViewPagerTestActivity"
+        <activity
+            android:name=".ViewPagerTest.ViewPagerTestActivity"
             android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ViewPagerBeGalleryTest.ViewPagerForGalleryMainActivity">
         </activity>
     </application>
 
