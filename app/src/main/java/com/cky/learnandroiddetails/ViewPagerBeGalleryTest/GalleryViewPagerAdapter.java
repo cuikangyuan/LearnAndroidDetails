@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * Created by cuikangyuan on 2017/7/26.
+ * 不带无限轮播功能的adapter
  */
 
 public class GalleryViewPagerAdapter extends PagerAdapter {

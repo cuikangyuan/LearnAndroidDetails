@@ -158,6 +158,8 @@
         </activity>
         <activity android:name=".rengwuxian.RengwuxianMainActivity">
         </activity>
+        <activity android:name=".ViewPagerAdapterExtract.ViewPagerAdapterExtractedMainActivity">
+        </activity>
     </application>
 
 </manifest>
