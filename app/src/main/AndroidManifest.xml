@@ -156,6 +156,8 @@
         </activity>
         <activity android:name=".ViewPagerBeGalleryTest.ViewPagerForGalleryMainActivity">
         </activity>
+        <activity android:name=".rengwuxian.RengwuxianMainActivity">
+        </activity>
     </application>
 
 </manifest>
