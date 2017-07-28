@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 
 import com.cky.learnandroiddetails.Camera.DisplayUtil;
 import com.cky.learnandroiddetails.R;
+import com.cky.learnandroiddetails.ViewPagerAdapterExtract.LoopPagerAdapterExtracted;
+import com.cky.learnandroiddetails.ViewPagerAdapterExtract.LoopPagerAdapterExtracted2;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.LoopPagerAdapter;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
@@ -32,6 +34,8 @@ public class ViewPagerMainActivity extends AppCompatActivity {
     public RollPagerView mRollViewPager;
     private TestLoopAdapter mAdapter;
     private TestNomalAdapter mAdapter1;
+    private TestLoopAdapter1 mAdapter2;//提取出的adapter
+    private TestLoopAdapter2 mAdapter3;//提取出的adapter
 
     private List<Integer> imgs = new ArrayList<>();
     int width;
@@ -49,16 +53,18 @@ public class ViewPagerMainActivity extends AppCompatActivity {
 
 
         mAdapter1 = new TestNomalAdapter(imgs);
-
-        mRollViewPager.setAdapter(mAdapter);
+        mAdapter2 = new TestLoopAdapter1(mRollViewPager, imgs);
+        mAdapter3 = new TestLoopAdapter2(mRollViewPager, imgs);
+        mRollViewPager.setAdapter(mAdapter3);
 
         imgs.add(R.mipmap.vp_1);
-        //imgs.add(R.mipmap.vp_2);
-        //imgs.add(R.mipmap.vp_3);
+        imgs.add(R.mipmap.vp_2);
+        imgs.add(R.mipmap.vp_3);
         //imgs.add(R.mipmap.vp_4);
 
         mAdapter.notifyDataSetChanged();
-
+        mAdapter2.notifyDataSetChanged();
+        mAdapter3.notifyDataSetChanged();
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(width, ViewGroup.LayoutParams.MATCH_PARENT);
         mRollViewPager.setGravity(Gravity.CENTER);
 
@@ -127,6 +133,62 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         }
 
         public TestLoopAdapter(RollPagerView viewPager, List<Integer> imgs) {
+            super(viewPager);
+            this.imgs = imgs;
+        }
+
+        @Override
+        public View getView(ViewGroup container, int position) {
+            ImageView view = new ImageView(container.getContext());
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            view.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            view.setImageResource(imgs.get(position));
+
+            return view;
+        }
+
+        @Override
+        public int getRealCount() {
+            return imgs.size();
+        }
+    }
+
+    public class TestLoopAdapter1 extends LoopPagerAdapterExtracted {
+        private List<Integer> imgs = new ArrayList<>();
+
+        public TestLoopAdapter1(RollPagerView viewPager) {
+            super(viewPager);
+        }
+
+        public TestLoopAdapter1(RollPagerView viewPager, List<Integer> imgs) {
+            super(viewPager);
+            this.imgs = imgs;
+        }
+
+        @Override
+        public View getView(ViewGroup container, int position) {
+            ImageView view = new ImageView(container.getContext());
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            view.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            view.setImageResource(imgs.get(position));
+
+            return view;
+        }
+
+        @Override
+        public int getRealCount() {
+            return imgs.size();
+        }
+    }
+
+    public class TestLoopAdapter2 extends LoopPagerAdapterExtracted2 {
+        private List<Integer> imgs = new ArrayList<>();
+
+        public TestLoopAdapter2(RollPagerView viewPager) {
+            super(viewPager);
+        }
+
+        public TestLoopAdapter2(RollPagerView viewPager, List<Integer> imgs) {
             super(viewPager);
             this.imgs = imgs;
         }

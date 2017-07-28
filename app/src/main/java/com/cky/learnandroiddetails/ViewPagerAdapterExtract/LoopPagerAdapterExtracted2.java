@@ -2,6 +2,7 @@ package com.cky.learnandroiddetails.ViewPagerAdapterExtract;
 
 import android.database.DataSetObserver;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -13,13 +14,13 @@ import java.util.ArrayList;
  * Created by cuikangyuan on 2017/7/28.
  */
 
-public abstract class LoopPagerAdapterExtracted extends PagerAdapter{
+public abstract class LoopPagerAdapterExtracted2 extends PagerAdapter{
 
     private RollPagerView mViewPager;
 
     private ArrayList<View> mViewList = new ArrayList<>();
 
-    public LoopPagerAdapterExtracted(RollPagerView viewPager) {
+    public LoopPagerAdapterExtracted2(RollPagerView viewPager) {
         this.mViewPager = viewPager;
     }
 
@@ -28,7 +29,7 @@ public abstract class LoopPagerAdapterExtracted extends PagerAdapter{
         if (getRealCount() <= 1) {
             return getRealCount();
         } else {
-            return Integer.MAX_VALUE;
+            return getRealCount() + 2;
         }
     }
 
@@ -44,10 +45,23 @@ public abstract class LoopPagerAdapterExtracted extends PagerAdapter{
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        int realPosition = position % getRealCount();
+        int realPosition = getRealPosition(position);
         View itemView = findViewByPosition(container,realPosition);
         container.addView(itemView);
         return itemView;
+    }
+
+    private int getRealPosition(int position) {
+        Log.d("looptag", "position -> " + position);
+        int realCount = getRealCount();
+        if (realCount == 0)
+            return 0;
+        int realPosition = (position - 1) % realCount;
+        if (realPosition < 0) {
+            realPosition += realCount;
+        }
+        Log.d("looptag", "realPosition-> " + realPosition);
+        return realPosition;
     }
 
     private View findViewByPosition(ViewGroup container,int position){

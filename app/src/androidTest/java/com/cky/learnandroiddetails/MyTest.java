@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.ViewPagerBeGalleryTest.ViewPagerForGalleryMainActivity;
+import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerMainActivity;
 
 /**
  * 作者：cky
@@ -13,12 +14,12 @@ import com.cky.learnandroiddetails.ViewPagerBeGalleryTest.ViewPagerForGalleryMai
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ViewPagerForGalleryMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<ViewPagerMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ViewPagerForGalleryMainActivity.class);
+        super(ViewPagerMainActivity.class);
     }
 
     @Override
