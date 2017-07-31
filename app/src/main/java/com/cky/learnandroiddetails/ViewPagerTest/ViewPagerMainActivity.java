@@ -55,7 +55,7 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         mAdapter1 = new TestNomalAdapter(imgs);
         mAdapter2 = new TestLoopAdapter1(mRollViewPager, imgs);
         mAdapter3 = new TestLoopAdapter2(mRollViewPager, imgs);
-        mRollViewPager.setAdapter(mAdapter3);
+        mRollViewPager.setAdapter(mAdapter2);
 
         imgs.add(R.mipmap.vp_1);
         imgs.add(R.mipmap.vp_2);
@@ -177,7 +177,11 @@ public class ViewPagerMainActivity extends AppCompatActivity {
 
         @Override
         public int getRealCount() {
-            return imgs.size();
+            if (imgs != null) {
+                return imgs.size();
+            } else {
+                return 0;
+            }
         }
     }
 

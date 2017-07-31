@@ -2,11 +2,14 @@ package com.cky.learnandroiddetails.ViewPagerAdapterExtract;
 
 import android.database.DataSetObserver;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.jude.rollviewpager.RollPagerView;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +24,7 @@ public abstract class LoopPagerAdapterExtracted extends PagerAdapter{
 
     public LoopPagerAdapterExtracted(RollPagerView viewPager) {
         this.mViewPager = viewPager;
+        initPosition();
     }
 
     @Override
@@ -63,14 +67,30 @@ public abstract class LoopPagerAdapterExtracted extends PagerAdapter{
     }
 
     @Override
-    public void registerDataSetObserver(DataSetObserver observer) {
-        super.registerDataSetObserver(observer);
-    }
-
-    @Override
     public void notifyDataSetChanged() {
         mViewList.clear();
+        initPosition();
         super.notifyDataSetChanged();
+    }
+
+    private void initPosition(){
+        if (getRealCount() > 0) {
+            int half = Integer.MAX_VALUE/2;
+            int start = half - half%getRealCount();
+            setCurrent(start);
+        }
+    }
+
+    private void setCurrent(int index){
+        try {
+            Field field = ViewPager.class.getDeclaredField("mCurItem");
+            field.setAccessible(true);
+            field.set(mViewPager.getViewPager(),index);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
