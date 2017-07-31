@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 /**
  * Created by cuikangyuan on 2017/7/28.
+ *
  */
 
 public abstract class LoopPagerAdapterExtracted2 extends PagerAdapter{
