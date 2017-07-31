@@ -53,6 +53,7 @@ public abstract class LoopPagerAdapterExtracted extends PagerAdapter{
         container.addView(itemView);
         return itemView;
     }
+    
 
     private View findViewByPosition(ViewGroup container,int position){
         for (View view : mViewList) {
