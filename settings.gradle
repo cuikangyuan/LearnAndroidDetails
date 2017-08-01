@@ -1,1 +1,1 @@
-include ':app', ':lib-zxing', ':rollviewpager'
+include ':app', ':lib-zxing', ':rollviewpager', ':loopviewpagerlibrary'

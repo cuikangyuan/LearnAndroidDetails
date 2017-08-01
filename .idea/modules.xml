@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/LearnAndroidDetails.iml" filepath="$PROJECT_DIR$/LearnAndroidDetails.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-zxing/lib-zxing.iml" filepath="$PROJECT_DIR$/lib-zxing/lib-zxing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loopviewpagerlibrary/loopviewpagerlibrary.iml" filepath="$PROJECT_DIR$/loopviewpagerlibrary/loopviewpagerlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/rollviewpager/rollviewpager.iml" filepath="$PROJECT_DIR$/rollviewpager/rollviewpager.iml" />
     </modules>
   </component>
