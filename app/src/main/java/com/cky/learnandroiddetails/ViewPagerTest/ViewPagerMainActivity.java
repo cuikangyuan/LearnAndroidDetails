@@ -1,8 +1,8 @@
 package com.cky.learnandroiddetails.ViewPagerTest;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +83,9 @@ public class ViewPagerMainActivity extends AppCompatActivity {
         //mRollViewPager.getViewPager().setClipChildren(false);//设置此属性会导致 图片超出布局限制
         //mRollViewPager.getViewPager().setPageMargin(DisplayUtil.dip2px(this, 15));
         //设置拖拽时的动画，设置以后不显示左右两个局部视图
+        //mRollViewPager.getViewPager().setPageTransformer(true, new ZoomOutPageTransformer());
         mRollViewPager.getViewPager().setPageTransformer(true, new ZoomOutPageTransformer());
+
         //设置一下属性导致拉到头的光晕不显示
         mRollViewPager.getViewPager().setOverScrollMode(ViewPager.OVER_SCROLL_NEVER);
 

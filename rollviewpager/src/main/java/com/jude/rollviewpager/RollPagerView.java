@@ -32,7 +32,7 @@ import java.util.TimerTask;
  */
 public class RollPagerView extends RelativeLayout implements OnPageChangeListener {
 
-	private ViewPager mViewPager;
+	private MyViewPager mViewPager;
 	private PagerAdapter mAdapter;
 	private OnItemClickListener mOnItemClickListener;
     private GestureDetector mGestureDetector;
@@ -111,7 +111,7 @@ public class RollPagerView extends RelativeLayout implements OnPageChangeListene
 		paddingTop = (int) type.getDimension(R.styleable.RollViewPager_rollviewpager_hint_paddingTop, 0);
 		paddingBottom = (int) type.getDimension(R.styleable.RollViewPager_rollviewpager_hint_paddingBottom, Util.dip2px(getContext(),4));
 
-		mViewPager = new ViewPager(getContext());
+		mViewPager = new MyViewPager(getContext());
 		mViewPager.setId(R.id.viewpager_inner);
 		mViewPager.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 		addView(mViewPager);
@@ -415,4 +415,9 @@ public class RollPagerView extends RelativeLayout implements OnPageChangeListene
         mHintViewDelegate.setCurrentPosition(arg0, (HintView) mHintView);
 	}
 
+
+	@Override
+	protected void onAttachedToWindow() {
+		super.onAttachedToWindow();
+	}
 }
