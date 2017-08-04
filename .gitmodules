@@ -1,3 +1,3 @@
 [submodule "ext/rollviewpager-library"]
 	path = ext/rollviewpager-library
-	url = git@github.com:cuikangyuan/rollviewpager.git
+	url = https://github.com/cuikangyuan/rollviewpager.git
