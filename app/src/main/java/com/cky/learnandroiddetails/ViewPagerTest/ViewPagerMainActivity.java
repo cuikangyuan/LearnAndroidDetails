@@ -14,6 +14,9 @@ import com.cky.learnandroiddetails.Camera.DisplayUtil;
 import com.cky.learnandroiddetails.R;
 import com.cky.learnandroiddetails.ViewPagerAdapterExtract.LoopPagerAdapterExtracted;
 import com.cky.learnandroiddetails.ViewPagerAdapterExtract.LoopPagerAdapterExtracted2;
+import com.jude.rollviewpager.RollPagerView;
+import com.jude.rollviewpager.adapter.LoopPagerAdapter;
+import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
