@@ -12,7 +12,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/ext/rollviewpager-library" />
             <option value="$PROJECT_DIR$/lib-zxing" />
-            <option value="$PROJECT_DIR$/loopviewpagerlibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
