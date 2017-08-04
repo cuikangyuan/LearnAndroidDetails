@@ -1,6 +1,5 @@
 include ':app'
 include ':lib-zxing'
-include ':rollviewpager'
 include ':loopviewpagerlibrary'
 include ':rollviewpager-library'
 project(':rollviewpager-library').projectDir = new File(rootDir, 'ext/rollviewpager-library')
