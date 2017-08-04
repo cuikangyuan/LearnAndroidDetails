@@ -160,6 +160,8 @@
         </activity>
         <activity android:name=".ViewPagerAdapterExtract.ViewPagerAdapterExtractedMainActivity">
         </activity>
+        <activity android:name=".LayoutTransition.LayoutTransitionMainActivity">
+        </activity>
     </application>
 
 </manifest>
