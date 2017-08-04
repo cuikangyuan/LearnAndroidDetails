@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/lib-zxing/lib-zxing.iml" filepath="$PROJECT_DIR$/lib-zxing/lib-zxing.iml" />
       <module fileurl="file://$PROJECT_DIR$/loopviewpagerlibrary/loopviewpagerlibrary.iml" filepath="$PROJECT_DIR$/loopviewpagerlibrary/loopviewpagerlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/rollviewpager/rollviewpager.iml" filepath="$PROJECT_DIR$/rollviewpager/rollviewpager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ext/rollviewpager-library/rollviewpager-library.iml" filepath="$PROJECT_DIR$/ext/rollviewpager-library/rollviewpager-library.iml" />
     </modules>
   </component>
 </project>
