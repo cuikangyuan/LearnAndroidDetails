@@ -73,6 +73,7 @@ public class MyViewPager extends ViewPager {
                     }
                 }
             });
+            //addOnScrollChangedListener也可以
 
         } catch (Exception e) {
             e.printStackTrace();
