@@ -162,6 +162,8 @@
         </activity>
         <activity android:name=".LayoutTransition.LayoutTransitionMainActivity">
         </activity>
+        <activity android:name=".ThreeDRotateAnimation.ThreeDRotationAct">
+        </activity>
     </application>
 
 </manifest>
