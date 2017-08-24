@@ -175,8 +175,8 @@ public class SpannableStringMainActivity extends AppCompatActivity {
         //TagUtil.setTag("新品", mTextView);
         //TagUtil.setTag("爆款", mTextView);
         List<String> tags = new ArrayList<>();
-        tags.add("新品");
-        tags.add("爆款");
+        tags.add("新品哦");
+        tags.add("全球购");
         TagUtil.setTags(tags, mTextView);
     }
 }
