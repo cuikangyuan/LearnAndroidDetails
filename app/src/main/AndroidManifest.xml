@@ -164,6 +164,8 @@
         </activity>
         <activity android:name=".ThreeDRotateAnimation.ThreeDRotationAct">
         </activity>
+        <activity android:name=".TestBorderBg.TestBorderBgMainActivity">
+        </activity>
     </application>
 
 </manifest>
