@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cky.learnandroiddetails.PercentLayoutAct.PercentLayoutMainActivity">
+
+    <Button
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:text="1"
+        android:layout_gravity="left|top"/>
+
+    <Button
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:text="2"
+        android:layout_gravity="right|top"/>
+
+    <Button
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:text="3"
+        android:layout_gravity="left|bottom"/>
+
+    <Button
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:text="4"
+        android:layout_gravity="right|bottom"/>
+</android.support.percent.PercentFrameLayout>

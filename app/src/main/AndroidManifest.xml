@@ -166,6 +166,8 @@
         </activity>
         <activity android:name=".TestBorderBg.TestBorderBgMainActivity">
         </activity>
+        <activity android:name=".PercentLayoutAct.PercentLayoutMainActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.LayoutTransition.LayoutTransitionMainActivity;
+import com.cky.learnandroiddetails.PercentLayoutAct.PercentLayoutMainActivity;
 import com.cky.learnandroiddetails.SpannableStringLearn.SpannableStringMainActivity;
 import com.cky.learnandroiddetails.TestBorderBg.TestBorderBgMainActivity;
 import com.cky.learnandroiddetails.ThreeDRotateAnimation.ThreeDRotationAct;
@@ -19,12 +20,12 @@ import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerTestActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<TestBorderBgMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<PercentLayoutMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(TestBorderBgMainActivity.class);
+        super(PercentLayoutMainActivity.class);
     }
 
     @Override
