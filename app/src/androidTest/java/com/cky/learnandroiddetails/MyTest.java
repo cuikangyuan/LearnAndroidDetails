@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
+import com.cky.learnandroiddetails.FragmentBackStackTest.FragBackStackTestMainActivity;
 import com.cky.learnandroiddetails.LayoutTransition.LayoutTransitionMainActivity;
 import com.cky.learnandroiddetails.PercentLayoutAct.PercentLayoutMainActivity;
 import com.cky.learnandroiddetails.SpannableStringLearn.SpannableStringMainActivity;
@@ -20,12 +21,12 @@ import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerTestActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<PercentLayoutMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<FragBackStackTestMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(PercentLayoutMainActivity.class);
+        super(FragBackStackTestMainActivity.class);
     }
 
     @Override

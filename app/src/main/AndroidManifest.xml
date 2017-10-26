@@ -168,6 +168,8 @@
         </activity>
         <activity android:name=".PercentLayoutAct.PercentLayoutMainActivity">
         </activity>
+        <activity android:name=".FragmentBackStackTest.FragBackStackTestMainActivity">
+        </activity>
     </application>
 
 </manifest>
