@@ -22,7 +22,11 @@ public class FragBackStackTestMainActivity extends AppCompatActivity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                replaceFragment(new Fragment3(), true);
+                /*
+                此时替换的时候如果没有调用addToBackStack，
+                那么fragment2就会进入销毁状态 onDestroy onDestroyView onDetach就会被调用
+                */
+                replaceFragment(new Fragment3(), false);
             }
         });
 
