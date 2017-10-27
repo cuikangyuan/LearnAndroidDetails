@@ -6,6 +6,7 @@ import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.FragmentBackStackTest.FragBackStackTestMainActivity;
 import com.cky.learnandroiddetails.LayoutTransition.LayoutTransitionMainActivity;
+import com.cky.learnandroiddetails.LocalBroadCastReceiverTest.LocalBroadCastReceiverTest;
 import com.cky.learnandroiddetails.PercentLayoutAct.PercentLayoutMainActivity;
 import com.cky.learnandroiddetails.SpannableStringLearn.SpannableStringMainActivity;
 import com.cky.learnandroiddetails.TestBorderBg.TestBorderBgMainActivity;
@@ -21,12 +22,12 @@ import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerTestActivity;
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<FragBackStackTestMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<LocalBroadCastReceiverTest> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(FragBackStackTestMainActivity.class);
+        super(LocalBroadCastReceiverTest.class);
     }
 
     @Override
