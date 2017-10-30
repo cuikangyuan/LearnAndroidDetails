@@ -8,6 +8,7 @@ import com.cky.learnandroiddetails.FragmentBackStackTest.FragBackStackTestMainAc
 import com.cky.learnandroiddetails.LayoutTransition.LayoutTransitionMainActivity;
 import com.cky.learnandroiddetails.LocalBroadCastReceiverTest.LocalBroadCastReceiverTest;
 import com.cky.learnandroiddetails.PercentLayoutAct.PercentLayoutMainActivity;
+import com.cky.learnandroiddetails.SQliteTest.SQliteTestMainActivity;
 import com.cky.learnandroiddetails.SpannableStringLearn.SpannableStringMainActivity;
 import com.cky.learnandroiddetails.TestBorderBg.TestBorderBgMainActivity;
 import com.cky.learnandroiddetails.ThreeDRotateAnimation.ThreeDRotationAct;
@@ -23,12 +24,12 @@ import com.cky.learnandroiddetails.sharedPreferencesTest.SharedPreferenceMainAct
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<SharedPreferenceMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<SQliteTestMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(SharedPreferenceMainActivity.class);
+        super(SQliteTestMainActivity.class);
     }
 
     @Override
