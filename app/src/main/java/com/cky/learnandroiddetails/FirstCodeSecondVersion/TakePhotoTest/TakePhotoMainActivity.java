@@ -29,6 +29,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import it.sephiroth.android.library.picasso.Picasso;
+
 
 
 /*
@@ -158,7 +160,8 @@ public class TakePhotoMainActivity extends AppCompatActivity {
                     Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(mUri));
                     //Bitmap bitmap = BitmapFactory.decodeFile(mUri.getPath());
                     //Log.d(TAG, "mUri.getPath()" + mUri.getPath());
-                    mImageView.setImageBitmap(bitmap);
+                    //mImageView.setImageBitmap(bitmap);
+                    Picasso.with(this).load(mUri).fit().into(mImageView);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -222,7 +225,8 @@ public class TakePhotoMainActivity extends AppCompatActivity {
     private void displayImage(String imagePath) {
         if (imagePath != null) {
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
-            mImageView.setImageBitmap(bitmap);
+            //mImageView.setImageBitmap(bitmap);
+            Picasso.with(this).load(imagePath).fit().into(mImageView);
         } else {
             ToastUtil.showToast(this, "获取图片失败");
         }
