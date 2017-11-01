@@ -1,4 +1,4 @@
-package com.cky.learnandroiddetails.sharedPreferencesTest;
+package com.cky.learnandroiddetails.FirstCodeSecondVersion.sharedPreferencesTest;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;

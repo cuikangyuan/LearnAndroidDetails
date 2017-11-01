@@ -1,4 +1,4 @@
-package com.cky.learnandroiddetails.NotificationTest;
+package com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest;
 
 import android.app.Notification;
 import android.app.NotificationManager;

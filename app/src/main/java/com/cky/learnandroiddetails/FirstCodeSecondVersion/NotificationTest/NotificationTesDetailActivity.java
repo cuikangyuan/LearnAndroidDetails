@@ -1,4 +1,4 @@
-package com.cky.learnandroiddetails.NotificationTest;
+package com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

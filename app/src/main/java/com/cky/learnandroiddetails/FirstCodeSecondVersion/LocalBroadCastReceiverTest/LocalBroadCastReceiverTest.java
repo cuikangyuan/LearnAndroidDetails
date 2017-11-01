@@ -1,4 +1,4 @@
-package com.cky.learnandroiddetails.LocalBroadCastReceiverTest;
+package com.cky.learnandroiddetails.FirstCodeSecondVersion.LocalBroadCastReceiverTest;
 
 import android.content.Intent;
 import android.content.IntentFilter;

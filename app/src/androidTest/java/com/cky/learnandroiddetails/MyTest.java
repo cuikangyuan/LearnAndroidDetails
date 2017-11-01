@@ -4,19 +4,7 @@ import android.app.Activity;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
-import com.cky.learnandroiddetails.FragmentBackStackTest.FragBackStackTestMainActivity;
-import com.cky.learnandroiddetails.LayoutTransition.LayoutTransitionMainActivity;
-import com.cky.learnandroiddetails.LocalBroadCastReceiverTest.LocalBroadCastReceiverTest;
-import com.cky.learnandroiddetails.NotificationTest.NotificationTestMainActivity;
-import com.cky.learnandroiddetails.PercentLayoutAct.PercentLayoutMainActivity;
-import com.cky.learnandroiddetails.SQliteTest.SQliteTestMainActivity;
-import com.cky.learnandroiddetails.SpannableStringLearn.SpannableStringMainActivity;
-import com.cky.learnandroiddetails.TestBorderBg.TestBorderBgMainActivity;
-import com.cky.learnandroiddetails.ThreeDRotateAnimation.ThreeDRotationAct;
-import com.cky.learnandroiddetails.ViewPagerBeGalleryTest.ViewPagerForGalleryMainActivity;
-import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerMainActivity;
-import com.cky.learnandroiddetails.ViewPagerTest.ViewPagerTestActivity;
-import com.cky.learnandroiddetails.sharedPreferencesTest.SharedPreferenceMainActivity;
+import com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest.NotificationTestMainActivity;
 
 /**
  * 作者：cky

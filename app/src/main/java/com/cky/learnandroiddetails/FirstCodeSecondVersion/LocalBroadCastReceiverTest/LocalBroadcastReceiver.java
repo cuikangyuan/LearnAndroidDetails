@@ -1,4 +1,4 @@
-package com.cky.learnandroiddetails.LocalBroadCastReceiverTest;
+package com.cky.learnandroiddetails.FirstCodeSecondVersion.LocalBroadCastReceiverTest;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.cky.learnandroiddetails.FragmentBackStackTest.FragBackStackTestMainActivity">
+    tools:context=".FirstCodeSecondVersion.FragmentBackStackTest.FragBackStackTestMainActivity">
 
     <fragment
         android:id="@+id/frag1"
-        android:name="com.cky.learnandroiddetails.FragmentBackStackTest.Fragment1"
+        android:name="com.cky.learnandroiddetails.FirstCodeSecondVersion.FragmentBackStackTest.Fragment1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
