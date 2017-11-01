@@ -178,6 +178,10 @@
         </activity>
         <activity android:name=".ContentResolverTest.ContentResolverTestMainActivity">
         </activity>
+        <activity android:name=".NotificationTest.NotificationTestMainActivity">
+        </activity>
+        <activity android:name=".NotificationTest.NotificationTesDetailActivity">
+        </activity>
     </application>
 
 </manifest>

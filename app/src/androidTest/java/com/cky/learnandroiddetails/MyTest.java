@@ -7,6 +7,7 @@ import android.test.ActivityInstrumentationTestCase2;
 import com.cky.learnandroiddetails.FragmentBackStackTest.FragBackStackTestMainActivity;
 import com.cky.learnandroiddetails.LayoutTransition.LayoutTransitionMainActivity;
 import com.cky.learnandroiddetails.LocalBroadCastReceiverTest.LocalBroadCastReceiverTest;
+import com.cky.learnandroiddetails.NotificationTest.NotificationTestMainActivity;
 import com.cky.learnandroiddetails.PercentLayoutAct.PercentLayoutMainActivity;
 import com.cky.learnandroiddetails.SQliteTest.SQliteTestMainActivity;
 import com.cky.learnandroiddetails.SpannableStringLearn.SpannableStringMainActivity;
@@ -24,12 +25,12 @@ import com.cky.learnandroiddetails.sharedPreferencesTest.SharedPreferenceMainAct
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<SQliteTestMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<NotificationTestMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(SQliteTestMainActivity.class);
+        super(NotificationTestMainActivity.class);
     }
 
     @Override
