@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest.NotificationTestMainActivity;
+import com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.TakePhotoMainActivity;
 
 /**
  * 作者：cky
@@ -13,12 +14,12 @@ import com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest.Notif
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<NotificationTestMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<TakePhotoMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(NotificationTestMainActivity.class);
+        super(TakePhotoMainActivity.class);
     }
 
     @Override
