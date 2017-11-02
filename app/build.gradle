@@ -75,4 +75,5 @@ dependencies {
     androidTestCompile 'com.android.support.test:rules:0.5'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
     compile 'it.sephiroth.android.library.picasso:picasso:2.5.2.4b@aar'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
 }
