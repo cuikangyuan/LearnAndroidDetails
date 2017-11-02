@@ -14,12 +14,12 @@ import com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.TakePhot
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<TakePhotoMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<com.cky.learnandroiddetails.webViewTest.MainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(TakePhotoMainActivity.class);
+        super(com.cky.learnandroiddetails.webViewTest.MainActivity.class);
     }
 
     @Override
