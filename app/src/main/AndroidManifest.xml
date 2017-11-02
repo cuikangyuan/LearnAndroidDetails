@@ -184,18 +184,25 @@
         </activity>
         <activity android:name=".FirstCodeSecondVersion.TakePhotoTest.TakePhotoMainActivity">
         </activity>
-        
-        
-        <provider
-            android:grantUriPermissions="true"
-            android:exported="false"
-            android:authorities="com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.fileprovider"
-            android:name="android.support.v4.content.FileProvider">
 
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"/>
         </provider>
+
+        <service
+            android:name=".FirstCodeSecondVersion.ServiceBestPractice.DownloadService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".FirstCodeSecondVersion.ServiceBestPractice.Main5Activity">
+        </activity>
     </application>
 
 </manifest>
