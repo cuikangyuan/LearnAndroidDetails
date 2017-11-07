@@ -203,6 +203,9 @@
 
         <activity android:name=".FirstCodeSecondVersion.ServiceBestPractice.Main5Activity">
         </activity>
+        <activity android:name=".FirstCodeSecondVersion.ParcelableTest.ParcelableTestMainActivity">
+        </activity>
+        <activity android:name=".FirstCodeSecondVersion.ParcelableTest.ParcelableTestSecondActivity"></activity>
     </application>
 
 </manifest>
