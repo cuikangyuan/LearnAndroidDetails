@@ -15,9 +15,8 @@ public class ParcelableTestMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_parcelable_test_main);
 
 
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        findViewById(R.id.button).setOnClickListener(v -> {
+
                 Intent intent = new Intent(ParcelableTestMainActivity.this, ParcelableTestSecondActivity.class);
                 Person person = new Person();
                 person.setName("myname");
@@ -26,7 +25,7 @@ public class ParcelableTestMainActivity extends AppCompatActivity {
                 intent.putExtra("person", person);
 
                 startActivity(intent);
-            }
+
         });
 
     }
