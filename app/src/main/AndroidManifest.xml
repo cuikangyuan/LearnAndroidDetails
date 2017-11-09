@@ -205,7 +205,9 @@
         </activity>
         <activity android:name=".FirstCodeSecondVersion.ParcelableTest.ParcelableTestMainActivity">
         </activity>
-        <activity android:name=".FirstCodeSecondVersion.ParcelableTest.ParcelableTestSecondActivity"></activity>
+        <activity android:name=".FirstCodeSecondVersion.ParcelableTest.ParcelableTestSecondActivity"/>
+        <activity android:name=".ViewDragHelperTest.ViewDragHelperTestMainActivity">
+        </activity>
     </application>
 
 </manifest>
