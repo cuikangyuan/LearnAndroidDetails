@@ -38,8 +38,14 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"/>
         -->
+        
+        <!--
         <com.cky.learnandroiddetails.learnGcsSloopView.MatrixSetPolyToPolyTestView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"/>
+         -->
+        <com.cky.learnandroiddetails.learnGcsSloopView.XFermodeView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 </RelativeLayout>

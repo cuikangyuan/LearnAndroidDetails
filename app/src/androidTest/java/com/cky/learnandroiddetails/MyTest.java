@@ -11,6 +11,7 @@ import com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.TakePhot
 import com.cky.learnandroiddetails.RecyclerVIewItemViewTest.RecyclerVIewItemViewTestActivity;
 import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
 import com.cky.learnandroiddetails.ViewDragHelperTest.ViewDragHelperTestMainActivity;
+import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivity;
 
 /**
  * 作者：cky
@@ -19,12 +20,12 @@ import com.cky.learnandroiddetails.ViewDragHelperTest.ViewDragHelperTestMainActi
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<RecyclerVIewItemViewTestActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(RecyclerVIewItemViewTestActivity.class);
+        super(LearnGcsSloopViewMainActivity.class);
     }
 
     @Override
