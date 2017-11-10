@@ -8,6 +8,7 @@ import com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest.Notif
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.ParcelableTest.ParcelableTestMainActivity;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.ServiceBestPractice.Main5Activity;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.TakePhotoMainActivity;
+import com.cky.learnandroiddetails.RecyclerVIewItemViewTest.RecyclerVIewItemViewTestActivity;
 import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
 import com.cky.learnandroiddetails.ViewDragHelperTest.ViewDragHelperTestMainActivity;
 
@@ -18,12 +19,12 @@ import com.cky.learnandroiddetails.ViewDragHelperTest.ViewDragHelperTestMainActi
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ViewDragHelperTestMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<RecyclerVIewItemViewTestActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ViewDragHelperTestMainActivity.class);
+        super(RecyclerVIewItemViewTestActivity.class);
     }
 
     @Override

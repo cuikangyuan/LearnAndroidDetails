@@ -208,6 +208,8 @@
         <activity android:name=".FirstCodeSecondVersion.ParcelableTest.ParcelableTestSecondActivity"/>
         <activity android:name=".ViewDragHelperTest.ViewDragHelperTestMainActivity">
         </activity>
+        <activity android:name=".RecyclerVIewItemViewTest.RecyclerVIewItemViewTestActivity">
+        </activity>
     </application>
 
 </manifest>
