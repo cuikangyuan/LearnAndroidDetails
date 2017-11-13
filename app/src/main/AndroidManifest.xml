@@ -210,6 +210,8 @@
         </activity>
         <activity android:name=".RecyclerVIewItemViewTest.RecyclerVIewItemViewTestActivity">
         </activity>
+        <activity android:name=".ViewGroupAnimationTest.ViewGroupAnimationTestMainActivity">
+        </activity>
     </application>
 
 </manifest>
