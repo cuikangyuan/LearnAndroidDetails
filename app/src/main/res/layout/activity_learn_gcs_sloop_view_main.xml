@@ -52,8 +52,14 @@
             android:layout_height="wrap_content"/>
 
             -->
-
+<!--
         <com.cky.learnandroiddetails.learnGcsSloopView.ReflectView
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+-->
+        <com.cky.learnandroiddetails.learnGcsSloopView.SurfaceViewTemplate
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.cky.learnandroiddetails.learnGcsSloopView.SurfaceViewTemplate>
 </RelativeLayout>
