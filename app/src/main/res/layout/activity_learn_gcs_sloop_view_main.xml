@@ -64,10 +64,18 @@
 
         </com.cky.learnandroiddetails.learnGcsSloopView.SurfaceViewTemplate>
         -->
+        <!--
         <ImageView
             android:id="@+id/image1"
             android:layout_centerInParent="true"
-            android:src="@drawable/myanimatedvectordrawable"
+            android:src="@drawable/my_animated_vector_drawable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        -->
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/svg_line_animated_vector"/>
 </RelativeLayout>

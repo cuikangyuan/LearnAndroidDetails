@@ -8,6 +8,7 @@ import android.graphics.drawable.Animatable;
 import android.support.annotation.ColorRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.cky.learnandroiddetails.R;
@@ -29,7 +30,9 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
         //initView();
 
         ImageView imageView = (ImageView) findViewById(R.id.image1);
-        ((Animatable)imageView.getDrawable()).start();
+        imageView.setOnClickListener(v -> {
+            ((Animatable)imageView.getDrawable()).start();
+        });
 
     }
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+                android:duration="2000"
+                android:propertyName="pathData"
+                android:valueFrom="
+                        M 20,20
+                        L 50, 20 80, 20
+                        "
+                android:valueTo="
+                        M 20,20
+                        L 50, 50 80, 20
+                        "
+                android:valueType="pathType"
+                android:interpolator="@android:anim/bounce_interpolator">
+</objectAnimator>
+<!-- svg路径类型动画时 变换前后的节点数必须相同 所以之前使用三个点来绘制线段-->
