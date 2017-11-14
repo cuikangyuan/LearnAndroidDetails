@@ -72,10 +72,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         -->
+        <!--
         <ImageView
             android:id="@+id/image1"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/svg_line_animated_vector"/>
+         -->
+        <Button
+            android:text="button"
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sun_animated_vector_drawable"/>
 </RelativeLayout>

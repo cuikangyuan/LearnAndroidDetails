@@ -30,8 +30,13 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
         //initView();
 
         ImageView imageView = (ImageView) findViewById(R.id.image1);
-        imageView.setOnClickListener(v -> {
+        findViewById(R.id.button).setOnClickListener(v -> {
             ((Animatable)imageView.getDrawable()).start();
+        });
+
+
+        imageView.setOnClickListener(v -> {
+
         });
 
     }
