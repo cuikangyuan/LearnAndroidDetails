@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/mysvg">
+
+    <!-- name 必须和 svg drawable中name一样 -->
+    <target
+        android:name="test"
+        android:animation="@animator/mysvganimation"/>
+</animated-vector>

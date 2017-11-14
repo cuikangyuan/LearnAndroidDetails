@@ -21,12 +21,12 @@ import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivi
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ViewGroupAnimationTestMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ViewGroupAnimationTestMainActivity.class);
+        super(LearnGcsSloopViewMainActivity.class);
     }
 
     @Override

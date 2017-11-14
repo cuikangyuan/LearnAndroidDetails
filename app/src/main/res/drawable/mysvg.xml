@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="200dp"
+    android:width="200dp"
+    android:viewportHeight="100"
+    android:viewportWidth="100">
+
+    <group
+        android:name="test"
+        android:rotation="0">
+        <path
+            android:fillColor="@color/green"
+            android:pathData="
+                m 25 50
+                a 25, 25, 0, 1, 0, 50, 0"
+            />
+        <!-- 指令均可大小写 大写绝对定位 参照全局坐标系 小写相对定位 参照父容器坐标系 -->
+        <!-- 1.RX 2.RY 表示所在椭圆的半轴大小-->
+        <!-- 3.XROTATION 值椭圆X轴与水平方向顺时针方向夹角 可以想象成一个水平椭圆绕中心点顺时针旋转相应的角度-->
+        <!-- 4.FLAG1 1表示大角度弧线 0表示小角度弧线-->
+        <!-- 5.FLAG2 确定从起点到终点的方向 1顺时针 0逆时针-->
+        <!-- 6.X 7.Y为终点的坐标-->
+    </group>
+</vector>

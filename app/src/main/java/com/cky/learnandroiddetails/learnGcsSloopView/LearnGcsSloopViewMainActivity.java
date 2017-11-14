@@ -4,9 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Picture;
+import android.graphics.drawable.Animatable;
 import android.support.annotation.ColorRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.cky.learnandroiddetails.R;
 
@@ -26,6 +28,8 @@ public class LearnGcsSloopViewMainActivity extends AppCompatActivity {
         //initCanvas();
         //initView();
 
+        ImageView imageView = (ImageView) findViewById(R.id.image1);
+        ((Animatable)imageView.getDrawable()).start();
 
     }
 
