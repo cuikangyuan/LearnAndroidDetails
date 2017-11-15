@@ -10,6 +10,7 @@ import com.cky.learnandroiddetails.FirstCodeSecondVersion.ServiceBestPractice.Ma
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.TakePhotoMainActivity;
 import com.cky.learnandroiddetails.RecyclerVIewItemViewTest.RecyclerVIewItemViewTestActivity;
 import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
+import com.cky.learnandroiddetails.SysInfoTest.SysInfoTestMainActivity;
 import com.cky.learnandroiddetails.ViewDragHelperTest.ViewDragHelperTestMainActivity;
 import com.cky.learnandroiddetails.ViewGroupAnimationTest.ViewGroupAnimationTestMainActivity;
 import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivity;
@@ -21,12 +22,12 @@ import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivi
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<LearnGcsSloopViewMainActivity> {
+public class MyTest extends ActivityInstrumentationTestCase2<SysInfoTestMainActivity> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(LearnGcsSloopViewMainActivity.class);
+        super(SysInfoTestMainActivity.class);
     }
 
     @Override

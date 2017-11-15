@@ -212,6 +212,8 @@
         </activity>
         <activity android:name=".ViewGroupAnimationTest.ViewGroupAnimationTestMainActivity">
         </activity>
+        <activity android:name=".SysInfoTest.SysInfoTestMainActivity">
+        </activity>
     </application>
 
 </manifest>
