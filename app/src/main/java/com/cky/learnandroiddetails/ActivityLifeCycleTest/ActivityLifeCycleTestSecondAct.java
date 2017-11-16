@@ -13,6 +13,8 @@ public class ActivityLifeCycleTestSecondAct extends Activity {
 
     private static final String TAG = "ActivityLifeCycleTest->";
 
+
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -51,6 +53,13 @@ public class ActivityLifeCycleTestSecondAct extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life_cycle_test_second);
         Log.d(TAG, "2 onCreate: ");
+
+        findViewById(R.id.button).setOnClickListener(v -> {
+            Intent intent = new Intent(ActivityLifeCycleTestSecondAct.this, ActivityLifeCycleTestSecondAct.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            //single_top启动模式  会依次调用ActivityLifeCycleTestSecondAct 的 onPause ->　onNewIntent -> onResume
+            startActivity(intent);
+        });
     }
 
     @Override
