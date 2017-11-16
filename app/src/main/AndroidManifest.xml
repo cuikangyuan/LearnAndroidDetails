@@ -220,7 +220,8 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
         </activity>
         <activity android:name=".ActivityLifeCycleTest.ActivityLifeCycleTestSecondAct"
-                  android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+                  android:theme="@android:style/Theme.Light.NoTitleBar"
+                  android:configChanges="orientation|screenSize">
         </activity>
     </application>
 

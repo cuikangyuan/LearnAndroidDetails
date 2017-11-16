@@ -12,7 +12,29 @@ import com.cky.learnandroiddetails.R;
 public class ActivityLifeCycleTestMainAct extends Activity {
 
     private static final String TAG = "ActivityLifeCycleTest->";
-    
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.d(TAG, "1 onRestoreInstanceState: ");
+        //通常在onStart之后执行
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.d(TAG, "1 onNewIntent: ");
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "1 onSaveInstanceState: ");
+        //通常在onStop之前调用，但是可能在onPause之前 也可能在之后
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
