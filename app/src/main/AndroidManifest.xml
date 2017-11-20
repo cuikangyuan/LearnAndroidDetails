@@ -219,9 +219,19 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
         </activity>
-        <activity android:name=".ActivityLifeCycleTest.ActivityLifeCycleTestSecondAct"
-                  android:theme="@android:style/Theme.Light.NoTitleBar"
-                  android:configChanges="orientation|screenSize">
+        <activity
+            android:name=".ActivityLifeCycleTest.ActivityLifeCycleTestSecondAct"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+        </activity>
+        <activity android:name=".IntentTest.IntentTestAct1">
+        </activity>
+        <activity android:name=".IntentTest.IntentTestAct2">
+            <intent-filter>
+                <action android:name="com.cky.learnandroiddetails.IntentTest.myaction1"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.cky.learnandroiddetails.IntentTest.mycategory1"/>
+            </intent-filter>
         </activity>
     </application>
 

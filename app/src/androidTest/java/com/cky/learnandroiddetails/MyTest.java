@@ -9,6 +9,7 @@ import com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest.Notif
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.ParcelableTest.ParcelableTestMainActivity;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.ServiceBestPractice.Main5Activity;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.TakePhotoMainActivity;
+import com.cky.learnandroiddetails.IntentTest.IntentTestAct1;
 import com.cky.learnandroiddetails.RecyclerVIewItemViewTest.RecyclerVIewItemViewTestActivity;
 import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
 import com.cky.learnandroiddetails.SysInfoTest.SysInfoTestMainActivity;
@@ -23,12 +24,12 @@ import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivi
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<ActivityLifeCycleTestMainAct> {
+public class MyTest extends ActivityInstrumentationTestCase2<IntentTestAct1> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(ActivityLifeCycleTestMainAct.class);
+        super(IntentTestAct1.class);
     }
 
     @Override
