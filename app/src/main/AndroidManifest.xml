@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:name=".MyApplication"
@@ -229,9 +230,14 @@
         <activity android:name=".IntentTest.IntentTestAct2">
             <intent-filter>
                 <action android:name="com.cky.learnandroiddetails.IntentTest.myaction1"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="com.cky.learnandroiddetails.IntentTest.mycategory1"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".LoaderExample.TestLoaderActivity">
+        </activity>
+        <activity android:name=".LoaderExample.TestLoaderActivity2">
         </activity>
     </application>
 

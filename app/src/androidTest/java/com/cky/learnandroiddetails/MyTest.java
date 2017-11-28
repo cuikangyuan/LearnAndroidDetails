@@ -10,6 +10,8 @@ import com.cky.learnandroiddetails.FirstCodeSecondVersion.ParcelableTest.Parcela
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.ServiceBestPractice.Main5Activity;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.TakePhotoTest.TakePhotoMainActivity;
 import com.cky.learnandroiddetails.IntentTest.IntentTestAct1;
+import com.cky.learnandroiddetails.LoaderExample.TestLoaderActivity;
+import com.cky.learnandroiddetails.LoaderExample.TestLoaderActivity2;
 import com.cky.learnandroiddetails.RecyclerVIewItemViewTest.RecyclerVIewItemViewTestActivity;
 import com.cky.learnandroiddetails.Scroller.ScrollerMainActivity;
 import com.cky.learnandroiddetails.SysInfoTest.SysInfoTestMainActivity;
@@ -24,12 +26,12 @@ import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivi
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<IntentTestAct1> {
+public class MyTest extends ActivityInstrumentationTestCase2<TestLoaderActivity2> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(IntentTestAct1.class);
+        super(TestLoaderActivity2.class);
     }
 
     @Override
