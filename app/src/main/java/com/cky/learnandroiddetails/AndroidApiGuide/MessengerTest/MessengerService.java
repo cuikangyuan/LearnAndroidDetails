@@ -41,4 +41,16 @@ public class MessengerService extends Service {
         Toast.makeText(getApplicationContext(), "binding...", Toast.LENGTH_SHORT).show();
         return mMessenger.getBinder();
     }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return super.onUnbind(intent);
+    }
+
+    @Override
+    public void onRebind(Intent intent) {
+        super.onRebind(intent);
+    }
+
+
 }
