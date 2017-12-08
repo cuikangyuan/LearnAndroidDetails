@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.cky.learnandroiddetails.ActivityLifeCycleTest.ActivityLifeCycleTestMainAct;
+import com.cky.learnandroiddetails.AndroidApiGuide.MessengerTest.ActivityMessenger;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.FragTest.Activity1;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.NotificationTest.NotificationTestMainActivity;
 import com.cky.learnandroiddetails.FirstCodeSecondVersion.ParcelableTest.ParcelableTestMainActivity;
@@ -27,12 +28,12 @@ import com.cky.learnandroiddetails.learnGcsSloopView.LearnGcsSloopViewMainActivi
  * https://segmentfault.com/u/chriszou/articles
  */
 
-public class MyTest extends ActivityInstrumentationTestCase2<Activity1> {
+public class MyTest extends ActivityInstrumentationTestCase2<ActivityMessenger> {
 
     private Activity mActivity;
 
     public MyTest() {
-        super(Activity1.class);
+        super(ActivityMessenger.class);
     }
 
     @Override
